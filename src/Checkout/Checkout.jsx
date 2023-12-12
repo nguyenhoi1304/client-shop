@@ -6,7 +6,8 @@ import convertMoney from "../convertMoney";
 import "./Checkout.css";
 
 import io from "socket.io-client";
-const socket = io.connect("http://localhost:5000");
+// const socket = io.connect("http://localhost:5000");
+const socket = io.connect("https://backend-shop-rzlv.onrender.com");
 
 function Checkout(props) {
   const [carts, setCarts] = useState([]);
