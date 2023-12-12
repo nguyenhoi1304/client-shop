@@ -35,7 +35,7 @@ function App() {
         </Routes>
       </BrowserRouter>
 
-      <Chat />
+      {/* <Chat /> */}
 
       <Footer />
     </div>
