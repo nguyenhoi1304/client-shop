@@ -16,10 +16,10 @@ function Home(props) {
         const response = await ProductAPI.getAPI();
         const data = response?.splice(0, 8);
         setProducts(data);
-        setLoading(false);
       } catch (err) {
         console.log(err);
       }
+      setLoading(false);
     };
     fetchData();
   }, []);
