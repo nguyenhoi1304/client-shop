@@ -12,13 +12,9 @@ function Home(props) {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      try {
-        const response = await ProductAPI.getAPI();
-        const data = response?.splice(0, 8);
-        setProducts(data);
-      } catch (err) {
-        console.log(err);
-      }
+      const response = await ProductAPI.getAPI();
+      const data = response?.splice(0, 8);
+      setProducts(data);
       setLoading(false);
     };
     fetchData();
