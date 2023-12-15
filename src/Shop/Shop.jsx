@@ -13,6 +13,7 @@ import ReactPaginate from "react-paginate";
 function Shop(props) {
   const [products, setProducts] = useState([]);
   const [temp, setTemp] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   //state dùng để sắp xếp sản phẩm
   const [sort, setSort] = useState("default");
@@ -118,6 +119,8 @@ function Shop(props) {
   //Gọi hàm Pagination
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
+
       const params = {
         page: pagination.page,
         count: pagination.count,
@@ -133,6 +136,7 @@ function Shop(props) {
       const response = data;
       setProducts(response);
       setTemp(response);
+      setLoading(false);
     };
 
     fetchData();
@@ -373,7 +377,11 @@ function Shop(props) {
                 </div>
               </div>
 
-              <Products products={products} sort={sort} />
+              {loading ? (
+                <h3>please loading wait</h3>
+              ) : (
+                <Products products={products} sort={sort} />
+              )}
 
               <Pagination
                 pagination={pagination}
