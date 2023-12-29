@@ -236,7 +236,7 @@ function Cart(props) {
         </div>
       </section>
       <section className="py-5">
-        <h2 className="h5 text-uppercase mb-4">Shopping cart</h2>
+        <h2 className="h5 text-uppercase mb-4">Giỏ mua sắm</h2>
         <div className="row">
           <div className="col-lg-8 mb-4 mb-lg-0">
             <ListCart
@@ -253,7 +253,7 @@ function Cart(props) {
                     to={`/shop`}
                   >
                     <i className="fas fa-long-arrow-alt-left mr-2"> </i>
-                    Continue shopping
+                    Tiếp tục xem sản phẩm
                   </Link>
                 </div>
                 <div className="col-md-6 text-md-right">
@@ -261,7 +261,7 @@ function Cart(props) {
                     className="btn btn-outline-dark btn-sm"
                     onClick={onCheckout}
                   >
-                    Proceed to checkout
+                    Thanh toán
                     <i className="fas fa-long-arrow-alt-right ml-2"></i>
                   </span>
                 </div>
@@ -271,11 +271,11 @@ function Cart(props) {
           <div className="col-lg-4">
             <div className="card border-0 rounded-0 p-lg-4 bg-light">
               <div className="card-body">
-                <h5 className="text-uppercase mb-4">Cart total</h5>
+                <h5 className="text-uppercase mb-4">Tổng trong giỏ hàng</h5>
                 <ul className="list-unstyled mb-0">
                   <li className="d-flex align-items-center justify-content-between">
                     <strong className="text-uppercase small font-weight-bold">
-                      Subtotal
+                      Tổng phụ chi
                     </strong>
                     <span className="text-muted small">
                       {convertMoney(total)} VND
@@ -284,7 +284,7 @@ function Cart(props) {
                   <li className="border-bottom my-2"></li>
                   <li className="d-flex align-items-center justify-content-between mb-4">
                     <strong className="text-uppercase small font-weight-bold">
-                      Total
+                      Tổng
                     </strong>
                     <span>{convertMoney(total)} VND</span>
                   </li>

@@ -336,7 +336,7 @@ function Detail(props) {
               <div className="col-sm-5 pr-sm-0">
                 <div className="border d-flex align-items-center justify-content-between py-1 px-3 bg-white border-white">
                   <span className="small text-uppercase text-gray mr-4 no-select">
-                    Quantity
+                    Số lượng
                   </span>
                   <div className="quantity">
                     <button
@@ -365,7 +365,7 @@ function Detail(props) {
                   className="btn btn-dark btn-sm btn-block d-flex align-items-center justify-content-center px-0 text-white"
                   onClick={addToCart}
                 >
-                  Add to cart
+                  Thêm vào giỏ
                 </span>
               </div>
               <br></br>
@@ -417,7 +417,7 @@ function Detail(props) {
                   : { color: "#383838" }
               }
             >
-              Description
+              Mô tả
             </a>
           </li>
           {/* <li className='nav-item'>
@@ -437,7 +437,7 @@ function Detail(props) {
           {review === "description" ? (
             <div className="tab-pane fade show active">
               <div className="pt-4 pb-4 bg-white">
-                <h6 className="text-uppercase">Product description </h6>
+                <h6 className="text-uppercase">Mô tả chi tiết sản phẩm </h6>
                 <br></br>
                 <p
                   className="text-muted text-small mb-0"
@@ -497,7 +497,7 @@ function Detail(props) {
             </div>
           )}
         </div>
-        <h2 className="h5 text-uppercase mb-4">Related products</h2>
+        <h2 className="h5 text-uppercase mb-4">Sản phẩm tương tự</h2>
         <div className="row">
           {product &&
             product

@@ -1,17 +1,15 @@
-import banner from './banner1.jpg';
-import img1 from './product_1.png';
-import img2 from './product_2.png';
-import img3 from './product_3.png';
-import img4 from './product_4.png';
-import img5 from './product_5.png';
+import banner1 from "./banner1.jpg";
+import banner2 from "./banner2.jpg";
+import banner3 from "./banner3.png";
+import banner4 from "./banner4.png";
+import banner5 from "./banner5.avif";
 
 const Image = {
-	banner: banner,
-	img1: img1,
-	img2: img2,
-	img3: img3,
-	img4: img4,
-	img5: img5,
+  banner1: banner1,
+  banner2: banner2,
+  banner3: banner3,
+  banner4: banner4,
+  banner5: banner5,
 };
 
 export default Image;

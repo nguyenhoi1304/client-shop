@@ -1,0 +1,28 @@
+.header {
+  background-color: #85b47a;
+}
+.img_logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.search_input {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  color: black;
+  padding: 7px 80px 7px 15px;
+}
+.btn_search {
+  background-color: #b7ce51;
+  padding: 7px 10px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: white;
+}
+.btn_search:hover {
+  background-color: #a4c025;
+}
+
+.cart:hover {
+  color: #f1b50f;
+}

@@ -3,6 +3,7 @@ import ProductAPI from "../API/ProductAPI";
 import Image from "../Share/img/Image";
 import convertMoney from "../convertMoney";
 import { Link } from "react-router-dom";
+import styles from "./Home.module.css";
 
 function Home(props) {
   const [products, setProducts] = useState([]);
@@ -85,7 +86,7 @@ function Home(props) {
                                   target="_top"
                                 >
                                   <i className="fa fa-shopping-cart"></i>
-                                  <span className="ml-2">View Detail</span>
+                                  <span className="ml-2">Xem chi tiết</span>
                                 </a>
                               </div>
                             </div>
@@ -99,26 +100,160 @@ function Home(props) {
             ))}
 
           <div className="container">
-            <section
-              className="hero pb-3 bg-cover bg-center d-flex align-items-center"
-              style={{ backgroundImage: `url(${Image.banner})` }}
-            >
-              <div className="container py-5">
-                <div className="row px-4 px-lg-5">
-                  <div className="col-lg-6">
-                    <p className="text-muted small text-uppercase mb-2">
-                      New Inspiration 2020
-                    </p>
-                    <h1 className="h2 text-uppercase mb-3">
-                      20% off on new season
-                    </h1>
-                    <a className="btn btn-dark" href="./shop">
-                      Browse collections
-                    </a>
+            <section className="mt-5">
+              <div
+                id="carouselExampleInterval"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
+                <div className="carousel-inner">
+                  <div className="carousel-item active" data-bs-interval="5000">
+                    <img
+                      src={Image.banner1}
+                      className={styles.img_banner}
+                      alt="..."
+                    />
+                  </div>
+                  <div className="carousel-item">
+                    <img
+                      src={Image.banner2}
+                      className={styles.img_banner}
+                      alt="..."
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      src={Image.banner3}
+                      className={styles.img_banner}
+                      alt="..."
+                    />
+                  </div>
+                  <div className="carousel-item">
+                    <img
+                      src={Image.banner4}
+                      className={styles.img_banner}
+                      alt="..."
+                    />
+                  </div>
+                  <div className="carousel-item">
+                    <img
+                      src={Image.banner5}
+                      className={styles.img_banner}
+                      alt="..."
+                    />
+                  </div>
+                </div>
+                <button
+                  className="carousel-control-prev "
+                  type="button"
+                  data-bs-target="#carouselExampleInterval"
+                  data-bs-slide="prev"
+                >
+                  <span className={styles.btn_move}>
+                    <i
+                      className="carousel-control-prev-icon  "
+                      aria-hidden="true"
+                    ></i>
+                  </span>
+                </button>
+                <button
+                  className="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleInterval"
+                  data-bs-slide="next"
+                >
+                  <span className={styles.btn_move}>
+                    <i
+                      className="carousel-control-next-icon  "
+                      aria-hidden="true"
+                    ></i>
+                  </span>
+                </button>
+              </div>
+            </section>
+
+            <section className="mt-5">
+              <div className={styles.card_sale}>
+                <div className="row p-3">
+                  <div className="col-3">
+                    <div
+                      className="card mb-0  "
+                      style={{ borderRadius: "15px" }}
+                    >
+                      <div className="card-body">
+                        <h6 className="card-title">Nhập mã : Giảm 25K</h6>
+                        <p className="card-title">
+                          Giảm 25k khi mua 2 sản phẩm trở lên!
+                        </p>
+                        <div className={styles.cart_body}>
+                          <button className={styles.btn_coppy}>Sao chép</button>
+                          <button className={styles.btn_condition}>
+                            Điều Kiện
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-3">
+                    <div
+                      className="card mb-0  "
+                      style={{ borderRadius: "15px" }}
+                    >
+                      <div className="card-body">
+                        <h6 className="card-title">Nhập mã : Giảm 10K</h6>
+                        <p className="card-title">Giảm 10k khi mua sản phẩm!</p>
+                        <div className={styles.cart_body}>
+                          <button className={styles.btn_coppy}>Sao chép</button>
+                          <button className={styles.btn_condition}>
+                            Điều Kiện
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-3">
+                    <div
+                      className="card mb-0  "
+                      style={{ borderRadius: "15px" }}
+                    >
+                      <div className="card-body">
+                        <h6 className="card-title">Nhập mã : Giảm 99K</h6>
+                        <p className="card-title">
+                          Giảm 99K khi mua 3 sản phẩm trở lên!
+                        </p>
+                        <div className={styles.cart_body}>
+                          <button className={styles.btn_coppy}>Sao chép</button>
+                          <button className={styles.btn_condition}>
+                            Điều Kiện
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-3">
+                    <div
+                      className="card mb-0  "
+                      style={{ borderRadius: "15px" }}
+                    >
+                      <div className="card-body">
+                        <h6 className="card-title">Nhập mã : Giảm 155K</h6>
+                        <p className="card-title">
+                          {" "}
+                          Giảm 155K khi mua đơn hàng 1 triệu
+                        </p>
+                        <div className={styles.cart_body}>
+                          <button className={styles.btn_coppy}>Sao chép</button>
+                          <button className={styles.btn_condition}>
+                            Điều Kiện
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </section>
+
             <section className="pt-5">
               <header className="text-center">
                 <p className="small text-muted small text-uppercase mb-1">

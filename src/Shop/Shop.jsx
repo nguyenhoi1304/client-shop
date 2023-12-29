@@ -251,10 +251,10 @@ function Shop(props) {
         <div className="container p-0">
           <div className="row">
             <div className="col-lg-3 order-2 order-lg-1">
-              <h5 className="text-uppercase mb-4">Categories</h5>
+              <h5 className="text-uppercase mb-4">Danh mục sản phẩm</h5>
               <div className="py-2 px-4 bg-dark text-white mb-3">
                 <strong className="small text-uppercase font-weight-bold">
-                  Apple
+                  Bánh Cao Cấp
                 </strong>
               </div>
               <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal">
@@ -264,13 +264,13 @@ function Shop(props) {
                     href="#"
                     onClick={() => handlerCategory("all")}
                   >
-                    All
+                    Bộ sưu tập bánh
                   </a>
                 </li>
               </ul>
               <div className="py-2 px-4 bg-light mb-3">
                 <strong className="small text-uppercase font-weight-bold">
-                  Iphone & Mac
+                  Bánh tặng quà
                 </strong>
               </div>
               <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal">
@@ -278,33 +278,33 @@ function Shop(props) {
                   <a
                     className="reset-anchor"
                     href="#"
-                    onClick={() => handlerCategory("iphone")}
+                    onClick={() => handlerCategory("chocolate")}
                   >
-                    IPhone
+                    Bánh Chocolate
                   </a>
                 </li>
                 <li className="mb-2">
                   <a
                     className="reset-anchor"
                     href="#"
-                    onClick={() => handlerCategory("ipad")}
+                    onClick={() => handlerCategory("pastry")}
                   >
-                    Ipad
+                    Bánh ngọt
                   </a>
                 </li>
                 <li className="mb-2">
                   <a
                     className="reset-anchor"
                     href="#"
-                    onClick={() => handlerCategory("macbook")}
+                    onClick={() => handlerCategory("custard")}
                   >
-                    Macbook
+                    Bánh bông lan
                   </a>
                 </li>
               </ul>
               <div className="py-2 px-4 bg-light mb-3">
                 <strong className="small text-uppercase font-weight-bold">
-                  Wireless
+                  Bánh ăn vặt
                 </strong>
               </div>
               <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal">
@@ -312,24 +312,42 @@ function Shop(props) {
                   <a
                     className="reset-anchor"
                     href="#"
-                    onClick={() => handlerCategory("airpod")}
+                    onClick={() => handlerCategory("seasonal")}
                   >
-                    Airpod
+                    Bánh theo mùa
                   </a>
                 </li>
                 <li className="mb-2">
                   <a
                     className="reset-anchor"
                     href="#"
-                    onClick={() => handlerCategory("watch")}
+                    onClick={() => handlerCategory("jelly")}
                   >
-                    Watch
+                    Bánh rau câu
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a
+                    className="reset-anchor"
+                    href="#"
+                    onClick={() => handlerCategory("bread")}
+                  >
+                    Bánh mì
+                  </a>
+                </li>
+                <li className="mb-2">
+                  <a
+                    className="reset-anchor"
+                    href="#"
+                    onClick={() => handlerCategory("cheesecake")}
+                  >
+                    Bánh kem
                   </a>
                 </li>
               </ul>
               <div className="py-2 px-4 bg-light mb-3">
                 <strong className="small text-uppercase font-weight-bold">
-                  Other
+                  Các loại bánh khác
                 </strong>
               </div>
               <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal mb-5">
@@ -337,27 +355,9 @@ function Shop(props) {
                   <a
                     className="reset-anchor"
                     href="#"
-                    onClick={() => handlerCategory("mouse")}
-                  >
-                    Mouse
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a
-                    className="reset-anchor"
-                    href="#"
-                    onClick={() => handlerCategory("keyboard")}
-                  >
-                    Keyboard
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <a
-                    className="reset-anchor"
-                    href="#"
                     onClick={() => handlerCategory("other")}
                   >
-                    Other
+                    Bánh khác
                   </a>
                 </li>
               </ul>

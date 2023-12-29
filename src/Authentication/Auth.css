@@ -7153,3 +7153,12 @@ input.input100 {
 .lh-2-9 {
 	line-height: 2.9;
 }
+
+.text_login {
+	color: white;
+
+}
+.text_login:hover {
+	color: #f1b50f;
+
+}

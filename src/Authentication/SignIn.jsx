@@ -135,9 +135,9 @@ function SignIn(props) {
 
   return (
     <div className="limiter">
-      <div className="container-login100">
+      <div className="container d-flex justify-content-center py-5">
         <div className="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-          <span className="login100-form-title p-b-33">Sign In</span>
+          <span className="login100-form-title p-b-33">Đăng nhập</span>
 
           <div className="d-flex justify-content-center pb-5">
             {emailRegex && (
@@ -165,24 +165,24 @@ function SignIn(props) {
             <input
               className="input100"
               type="password"
-              placeholder="Password"
+              placeholder="Mật khẩu"
               value={password}
               onChange={onChangePassword}
             />
           </div>
 
-          <div className="container-login100-form-btn m-t-20">
+          <div className="container-login100-form-btn m-t-20 ">
             {redirect && <redirect to={`/`} />}
             <button className="login100-form-btn" onClick={onSubmit}>
-              Sign in
+              Đăng nhập
             </button>
           </div>
 
           <div className="text-center p-t-45 p-b-4">
-            <span className="txt1">Create an account?</span>
+            <span className="txt1">Tạo tài khoản?</span>
             &nbsp;
             <Link to="/signup" className="txt2 hov1">
-              Sign up
+              Đăng ký
             </Link>
           </div>
         </div>

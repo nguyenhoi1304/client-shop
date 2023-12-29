@@ -147,25 +147,29 @@ function SignUp(props) {
     <div className="limiter">
       <div className="container-login100">
         <div className="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-          <span className="login100-form-title p-b-33">Sign Up</span>
+          <span className="login100-form-title p-b-33">Đăng ký</span>
           <div className="d-flex justify-content-center pb-5">
             {errorFullname && (
               <span className="text-danger">
-                * Please Check Your Full Name!
+                * Vui lòng kiểm tra full name!
               </span>
             )}
             {errorEmail && (
-              <span className="text-danger">* Please Check Your Email!</span>
+              <span className="text-danger">* Vui lòng kiểm tra Email!</span>
             )}
             {emailRegex && (
-              <span className="text-danger">* Incorrect Email Format</span>
+              <span className="text-danger">
+                * Email của bạn không đúng định dạng
+              </span>
             )}
             {errorPassword && (
-              <span className="text-danger">* Please Check Your Password!</span>
+              <span className="text-danger">
+                *Vui lòng kiểm tra lại password!
+              </span>
             )}
             {errorPhone && (
               <span className="text-danger">
-                * Please Check Your Phone Number!
+                * Vui lòng kiểm tra lại số điện thoại!
               </span>
             )}
           </div>
@@ -175,7 +179,7 @@ function SignUp(props) {
               value={fullname}
               onChange={onChangeName}
               type="text"
-              placeholder="Full Name"
+              placeholder="Tên đầy đủ"
             />
           </div>
 
@@ -195,7 +199,7 @@ function SignUp(props) {
               value={password}
               onChange={onChangePassword}
               type="password"
-              placeholder="Password"
+              placeholder="Mật khẩu"
             />
           </div>
 
@@ -205,18 +209,18 @@ function SignUp(props) {
               value={phone}
               onChange={onChangePhone}
               type="text"
-              placeholder="Phone"
+              placeholder="Số điện thoại"
             />
           </div>
 
           <div className="container-login100-form-btn m-t-20">
             <button className="login100-form-btn" onClick={handlerSignUp}>
-              Sign Up
+              Đăng ký
             </button>
           </div>
 
           <div className="text-center p-t-45 p-b-4">
-            <span className="txt1">Login?</span>
+            <span className="txt1">Đăng nhập?</span>
             &nbsp;
             <Link to="/signin" className="txt2 hov1">
               Click

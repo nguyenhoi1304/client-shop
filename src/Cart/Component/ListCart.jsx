@@ -64,27 +64,29 @@ function ListCart(props) {
           <tr className="text-center">
             <th className="border-0" scope="col">
               {" "}
-              <strong className="text-small text-uppercase">Image</strong>
+              <strong className="text-small text-uppercase">Hình ảnh</strong>
             </th>
             <th className="border-0" scope="col">
               {" "}
-              <strong className="text-small text-uppercase">Product</strong>
+              <strong className="text-small text-uppercase">
+                Tên sản phẩm
+              </strong>
             </th>
             <th className="border-0" scope="col">
               {" "}
-              <strong className="text-small text-uppercase">Price</strong>
+              <strong className="text-small text-uppercase">Giá</strong>
             </th>
             <th className="border-0" scope="col">
               {" "}
-              <strong className="text-small text-uppercase">Quantity</strong>
+              <strong className="text-small text-uppercase">Số lượng</strong>
             </th>
             <th className="border-0" scope="col">
               {" "}
-              <strong className="text-small text-uppercase">Total</strong>
+              <strong className="text-small text-uppercase">Tổng</strong>
             </th>
             <th className="border-0" scope="col">
               {" "}
-              <strong className="text-small text-uppercase">Remove</strong>
+              <strong className="text-small text-uppercase"></strong>
             </th>
           </tr>
         </thead>

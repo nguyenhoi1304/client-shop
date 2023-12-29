@@ -25,20 +25,15 @@ function Name(props) {
         aria-haspopup="true"
         aria-expanded="false"
       >
-        <i className="fas fa-user-alt mr-1 text-gray"></i>
+        <i className="fas fa-user-alt mr-1 text-white"></i>
         {name.fullName}
       </p>
       <div className="dropdown-menu mt-3" aria-labelledby="pagesDropdown">
-        {/* <Link
-					className='dropdown-item border-0 transition-link'
-					to={'/manage'}>
-					Manage
-				</Link> */}
         <Link
           className="dropdown-item border-0 transition-link"
           to={"/history"}
         >
-          History
+          Lịch sử giao dịch
         </Link>
       </div>
     </li>
