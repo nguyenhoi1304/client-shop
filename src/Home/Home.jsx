@@ -254,69 +254,22 @@ function Home(props) {
               </div>
             </section>
 
-            <section className="pt-5">
-              <header className="text-center">
-                <p className="small text-muted small text-uppercase mb-1">
-                  Carefully created collections
-                </p>
-                <h2 className="h5 text-uppercase mb-4">
-                  Browse our categories
-                </h2>
+            {/* <section className="pt-5">
+              <header className="text-left">
+                <h2 className="h5 text-uppercase mb-4">mùa yêu, deal ngọt</h2>
               </header>
-              <div className="row">
-                <div className="col-md-12 mb-4">
-                  <div className="row">
-                    <div className="col-md-6 mb-4 mb-md-0">
-                      <Link
-                        className="category-item"
-                        to={"/shop?category=iphone"}
-                      >
-                        <img className="img-fluid" src={Image.img1} alt="" />
-                      </Link>
-                    </div>
-                    <div className="col-md-6 mb-4 mb-md-0">
-                      <Link className="category-item" to={"/shop?category=mac"}>
-                        <img className="img-fluid" src={Image.img2} alt="" />
-                      </Link>
-                    </div>
-                  </div>
+              {loading ? (
+                <div class="spinner-border text-info" role="status">
+                  <span class="visually-hidden">
+                    <h4>Loading please wait...</h4>
+                  </span>
                 </div>
-
-                <div className="col-md-12">
-                  <div className="row">
-                    <div className="col-md-4 mb-4 mb-md-0">
-                      <Link
-                        className="category-item"
-                        to={"/shop?category=ipad"}
-                      >
-                        <img className="img-fluid" src={Image.img3} alt="" />
-                      </Link>
-                    </div>
-                    <div className="col-md-4 mb-4 mb-md-0">
-                      <Link
-                        className="category-item"
-                        to={"/shop?category=watch"}
-                      >
-                        <img className="img-fluid" src={Image.img4} alt="" />
-                      </Link>
-                    </div>
-                    <div className="col-md-4 mb-4 mb-md-0">
-                      <Link
-                        className="category-item"
-                        to={"/shop?category=airpod"}
-                      >
-                        <img className="img-fluid" src={Image.img5} alt="" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
+              ) : (
+                <section className="mt-5"></section>
+              )}
+            </section> */}
             <section className="py-5" id="section_product">
               <header>
-                <p className="small text-muted small text-uppercase mb-1">
-                  Made the hard way
-                </p>
                 <h2 className="h5 text-uppercase mb-4">Sản phẩm bán chạy</h2>
               </header>
               {loading ? (
