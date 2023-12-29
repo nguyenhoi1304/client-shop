@@ -48,7 +48,11 @@ function Pagination(props) {
     <nav aria-label="Page navigation example" className="pt-5">
       <ul className="pagination justify-content-center justify-content-lg-end">
         <li className="page-item">
-          <button className="page-link" onClick={() => onDownPage(page)}>
+          <button
+            className="page-link"
+            onClick={() => onDownPage(page)}
+            disabled={page === 1}
+          >
             <span>«</span>
           </button>
         </li>
@@ -58,14 +62,18 @@ function Pagination(props) {
           pagination={pagination}
         />
         <li className="page-item">
-          <button className="page-link" onClick={() => onUpPage(page)}>
+          <button
+            className="page-link"
+            onClick={() => onUpPage(page)}
+            disabled={totalPage === page}
+          >
             <span>»</span>
           </button>
         </li>
       </ul>
       <div className="pagination justify-content-center justify-content-lg-end">
         <p className="text-small text-muted mb-0">
-          Showing 1–9 of {parseInt(totalPage) * 9} results
+          Có {parseInt(totalPage)} trang kết quả
         </p>
       </div>
     </nav>

@@ -81,6 +81,12 @@ function Header(props) {
             </ul>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
+                <Link className="nav-link" to={`/shop`}>
+                  <i className="fas fa-store mr-1 text-white"></i>
+                  <span className={styles.cart}>Cửa hàng</span>
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to={`/cart`}>
                   <i className="fas fa-dolly-flatbed mr-1 text-white"></i>
                   <span className={styles.cart}>Giỏ hàng</span>

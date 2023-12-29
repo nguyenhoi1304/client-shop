@@ -148,13 +148,13 @@ function Shop(props) {
         <div className="container">
           <div className="row px-4 px-lg-5 py-lg-4 align-items-center">
             <div className="col-lg-6">
-              <h1 className="h2 text-uppercase mb-0">Shop</h1>
+              <h1 className="h2 text-uppercase mb-0">Cửa hàng</h1>
             </div>
             <div className="col-lg-6 text-lg-right">
               <nav aria-label="breadcrumb">
                 <ol className="breadcrumb justify-content-lg-end mb-0 px-0">
                   <li className="breadcrumb-item active" aria-current="page">
-                    Shop
+                    Hân hạnh được đón tiếp quý khách!
                   </li>
                 </ol>
               </nav>
@@ -378,7 +378,11 @@ function Shop(props) {
               </div>
 
               {loading ? (
-                <h3>please loading wait</h3>
+                <div class="spinner-border text-info" role="status">
+                  <span class="visually-hidden">
+                    <h4>Loading please wait...</h4>
+                  </span>
+                </div>
               ) : (
                 <Products products={products} sort={sort} />
               )}

@@ -317,12 +317,14 @@ function Home(props) {
                 <p className="small text-muted small text-uppercase mb-1">
                   Made the hard way
                 </p>
-                <h2 className="h5 text-uppercase mb-4">
-                  Top trending products
-                </h2>
+                <h2 className="h5 text-uppercase mb-4">Sản phẩm bán chạy</h2>
               </header>
               {loading ? (
-                <h1>Loading please wait</h1>
+                <div class="spinner-border text-info" role="status">
+                  <span class="visually-hidden">
+                    <h4>Loading please wait...</h4>
+                  </span>
+                </div>
               ) : (
                 <div className="row">
                   {products &&

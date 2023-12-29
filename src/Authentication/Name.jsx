@@ -26,7 +26,7 @@ function Name(props) {
         aria-expanded="false"
       >
         <i className="fas fa-user-alt mr-1 text-white"></i>
-        {name.fullName}
+        <span className="text-white">{name.fullName}</span>
       </p>
       <div className="dropdown-menu mt-3" aria-labelledby="pagesDropdown">
         <Link
