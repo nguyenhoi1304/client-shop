@@ -292,13 +292,13 @@ function Detail(props) {
                   </div>
                 </div>
                 <a
-                  className="carousel-control-prev"
+                  className="carousel-control-prev "
                   href="#carouselExampleControls"
                   role="button"
                   data-slide="prev"
                 >
                   <span
-                    className="carousel-control-prev-icon"
+                    className="carousel-control-prev-icon bg-dark"
                     aria-hidden="true"
                   ></span>
                   <span className="sr-only">Previous</span>
@@ -310,7 +310,7 @@ function Detail(props) {
                   data-slide="next"
                 >
                   <span
-                    className="carousel-control-next-icon"
+                    className="carousel-control-next-icon  bg-dark"
                     aria-hidden="true"
                   ></span>
                   <span className="sr-only">Next</span>
