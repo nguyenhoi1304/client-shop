@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import Item from "./Item";
 import Clock from "./Clock";
-import Carousel from "@itseasy21/react-elastic-carousel";
+// import Carousel from "@itseasy21/react-elastic-carousel";
 
 function Home(props) {
   const [products, setProducts] = useState([]);
@@ -351,7 +351,7 @@ function Home(props) {
                 </div>
               ) : (
                 <section className="mt-5">
-                  <Carousel breakPoints={breakPoints}>
+                  {/* <Carousel breakPoints={breakPoints}>
                     {productsLove?.map(
                       (product) =>
                         product.category === "chocolate" && (
@@ -376,7 +376,7 @@ function Home(props) {
                           </Item>
                         )
                     )}
-                  </Carousel>
+                  </Carousel> */}
                 </section>
               )}
             </section>
