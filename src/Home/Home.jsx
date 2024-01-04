@@ -516,7 +516,7 @@ function Home(props) {
               <div className="container p-0">
                 <div className="row">
                   <div className="col-lg-6 mb-3 mb-lg-0">
-                    <h5 className="text-uppercase">Let's be friends!</h5>
+                    <h5 className="text-uppercase">Chia sẽ với bạn bè!</h5>
                   </div>
                   <div className="col-lg-6">
                     <form action="#">
