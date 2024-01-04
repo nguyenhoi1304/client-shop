@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import styles from "./Home.module.css";
 
 Clock.propTypes = {
-  timerDays: PropTypes.number,
-  timerHours: PropTypes.number,
-  timerMinutes: PropTypes.number,
-  timerSeconds: PropTypes.number,
+  timerDays: PropTypes.string,
+  timerHours: PropTypes.string,
+  timerMinutes: PropTypes.string,
+  timerSeconds: PropTypes.string,
 };
 
 Clock.defaultProps = {
