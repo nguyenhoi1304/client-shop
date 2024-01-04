@@ -4,7 +4,7 @@ import Image from "../Share/img/Image";
 import convertMoney from "../convertMoney";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
-import Item from "./Item";
+// import Item from "./Item";
 import Clock from "./Clock";
 // import Carousel from "@itseasy21/react-elastic-carousel";
 
