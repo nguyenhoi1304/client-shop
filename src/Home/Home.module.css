@@ -38,6 +38,16 @@
 
 .card_love {
   height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  background-color: var(--background-main-color);
+  color: #fff;
+  margin: 15px;
+  font-size: 4em;
+  border-radius: 10px;
 }
 .card_love:hover {
   opacity: 0.8;

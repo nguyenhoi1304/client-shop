@@ -4,9 +4,8 @@ import Image from "../Share/img/Image";
 import convertMoney from "../convertMoney";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
-// import Item from "./Item";
 import Clock from "./Clock";
-// import Carousel from "@itseasy21/react-elastic-carousel";
+import Carousel from "@itseasy21/react-elastic-carousel";
 
 function Home(props) {
   const [products, setProducts] = useState([]);
@@ -351,11 +350,11 @@ function Home(props) {
                 </div>
               ) : (
                 <section className="mt-5">
-                  {/* <Carousel breakPoints={breakPoints}>
+                  <Carousel breakPoints={breakPoints}>
                     {productsLove?.map(
                       (product) =>
                         product.category === "chocolate" && (
-                          <Item key={product._id} className={styles.card_love}>
+                          <div key={product._id} className={styles.card_love}>
                             <a
                               className="d-block"
                               href={`#product_${product._id}`}
@@ -373,10 +372,10 @@ function Home(props) {
                                 {convertMoney(product.price)} VND
                               </p>
                             </a>
-                          </Item>
+                          </div>
                         )
                     )}
-                  </Carousel> */}
+                  </Carousel>
                 </section>
               )}
             </section>
