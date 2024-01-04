@@ -386,7 +386,7 @@ function Home(props) {
               <header className={styles.bestseller}>
                 <div className={styles.title}>
                   <span className={styles.text_title}>
-                    <i class="fas fa-truck mr-2" />
+                    <i className="fas fa-truck mr-2" />
                     sản phẩm bán chạy
                   </span>
                   <span className={styles.jump}>H</span>
@@ -395,8 +395,8 @@ function Home(props) {
                 </div>
               </header>
               {loading ? (
-                <div class="spinner-border text-info" role="status">
-                  <span class="visually-hidden">
+                <div className="spinner-border text-info" role="status">
+                  <span className="visually-hidden">
                     <h4>Loading please wait...</h4>
                   </span>
                 </div>
