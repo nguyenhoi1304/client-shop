@@ -4,22 +4,93 @@ import Image from "../Share/img/Image";
 import convertMoney from "../convertMoney";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
+import Carousel from "react-elastic-carousel";
+import Item from "./Item";
+import Clock from "./Clock";
 
 function Home(props) {
   const [products, setProducts] = useState([]);
+  const [productsLove, setProductsLove] = useState();
   const [loading, setLoading] = useState(false);
+  const [timerHours, setTimerHours] = useState();
+  const [timerMinutes, setTimerMinutes] = useState();
+  const [timerSeconds, setTimerSeconds] = useState();
 
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let interval;
+  const daysInit = new Date().getDay() + 1;
+  const monthInit = month[new Date().getMonth()];
+  const yearInit = new Date().getFullYear();
+
+  const startTimer = () => {
+    const countDownDate = new Date(
+      `${daysInit} ${monthInit},${yearInit}`
+    ).getTime();
+    console.log(daysInit);
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+
+      const distance = countDownDate - now;
+
+      // xử lý hiển thị 1 => 01
+      const hours = `0${Math.floor(
+        (distance % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60)
+      )}`.slice(-2);
+      const minutes = `0${Math.floor(
+        (distance % (60 * 60 * 1000)) / (1000 * 60)
+      )}`.slice(-2);
+      const seconds = `0${Math.floor((distance % (60 * 1000)) / 1000)}`.slice(
+        -2
+      );
+
+      if (distance < 0) {
+        //Stop Timer
+        clearInterval(interval.current);
+      } else {
+        //Update Timer
+        setTimerHours(hours);
+        setTimerMinutes(minutes);
+        setTimerSeconds(seconds);
+      }
+    });
+  };
+
+  useEffect(() => {
+    startTimer();
+  }, []);
   //Fetch Product
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       const response = await ProductAPI.getAPI();
-      const data = response?.splice(0, 8);
+      const data = response?.slice(0, 9);
+      setProductsLove(response);
       setProducts(data);
       setLoading(false);
     };
     fetchData();
   }, []);
+
+  // react-elastic-carousel
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 768, itemsToShow: 4 },
+    { width: 1200, itemsToShow: 5 },
+  ];
 
   return (
     <>
@@ -175,7 +246,7 @@ function Home(props) {
             <section className="mt-5">
               <div className={styles.card_sale}>
                 <div className="row p-3">
-                  <div className="col-3">
+                  <div className="col-md-3 mt-sm-2">
                     <div
                       className="card mb-0  "
                       style={{ borderRadius: "15px" }}
@@ -194,7 +265,7 @@ function Home(props) {
                       </div>
                     </div>
                   </div>
-                  <div className="col-3">
+                  <div className="col-md-3 mt-sm-2">
                     <div
                       className="card mb-0  "
                       style={{ borderRadius: "15px" }}
@@ -211,7 +282,7 @@ function Home(props) {
                       </div>
                     </div>
                   </div>
-                  <div className="col-3">
+                  <div className="col-md-3 mt-sm-2">
                     <div
                       className="card mb-0  "
                       style={{ borderRadius: "15px" }}
@@ -230,7 +301,7 @@ function Home(props) {
                       </div>
                     </div>
                   </div>
-                  <div className="col-3">
+                  <div className="col-md-3 mt-sm-2">
                     <div
                       className="card mb-0  "
                       style={{ borderRadius: "15px" }}
@@ -254,9 +325,23 @@ function Home(props) {
               </div>
             </section>
 
-            {/* <section className="pt-5">
-              <header className="text-left">
-                <h2 className="h5 text-uppercase mb-4">mùa yêu, deal ngọt</h2>
+            {/* mùa yêu, deal ngọt */}
+            <section className="pt-5">
+              <header className={styles.love}>
+                <div className={styles.title}>
+                  <span className={styles.text_title}>
+                    <i className="fas fa-heart mr-2"></i>mùa yêu, deal ngọt
+                  </span>
+                  <span className={styles.jump}>H</span>
+                  <span className={styles.jump}>O</span>
+                  <span className={styles.jump}>T</span>
+                </div>
+
+                <Clock
+                  timerHours={timerHours}
+                  timerMinutes={timerMinutes}
+                  timerSeconds={timerSeconds}
+                />
               </header>
               {loading ? (
                 <div class="spinner-border text-info" role="status">
@@ -265,12 +350,49 @@ function Home(props) {
                   </span>
                 </div>
               ) : (
-                <section className="mt-5"></section>
+                <section className="mt-5">
+                  <Carousel breakPoints={breakPoints}>
+                    {productsLove?.map(
+                      (product) =>
+                        product.category === "chocolate" && (
+                          <Item key={product._id} className={styles.card_love}>
+                            <a
+                              className="d-block"
+                              href={`#product_${product._id}`}
+                              data-toggle="modal"
+                            >
+                              <img
+                                className={styles.img_love}
+                                src={product.img1}
+                                alt="product_image"
+                              />
+                              <p className={styles.description}>
+                                {product.name}
+                              </p>
+                              <p className={styles.description}>
+                                {convertMoney(product.price)} VND
+                              </p>
+                            </a>
+                          </Item>
+                        )
+                    )}
+                  </Carousel>
+                </section>
               )}
-            </section> */}
+            </section>
+
+            {/* Sản phẩm bán chạy */}
             <section className="py-5" id="section_product">
-              <header>
-                <h2 className="h5 text-uppercase mb-4">Sản phẩm bán chạy</h2>
+              <header className={styles.bestseller}>
+                <div className={styles.title}>
+                  <span className={styles.text_title}>
+                    <i class="fas fa-truck mr-2" />
+                    sản phẩm bán chạy
+                  </span>
+                  <span className={styles.jump}>H</span>
+                  <span className={styles.jump}>O</span>
+                  <span className={styles.jump}>T</span>
+                </div>
               </header>
               {loading ? (
                 <div class="spinner-border text-info" role="status">
@@ -288,37 +410,44 @@ function Home(props) {
                       >
                         <div className="product text-center">
                           <div className="position-relative mb-3">
-                            <div className="badge text-white badge-"></div>
                             <a
                               className="d-block"
                               href={`#product_${value._id}`}
                               data-toggle="modal"
                             >
                               <img
-                                className="img-fluid"
+                                className={styles.img_love}
                                 src={value.img1}
                                 alt=""
                               />
                             </a>
+                            {/*  overlay */}
                             <div className="product-overlay">
                               <ul className="mb-0 list-inline">
-                                {/* <li className="list-inline-item m-0 p-0"><a className="btn btn-sm btn-outline-dark" href="#"><i className="far fa-heart"></i></a></li> */}
-                                {/* <li className="list-inline-item m-0 p-0">
-                                                              <Link className="btn btn-sm btn-dark" to={`/detail/${value._id}`}>
-                                                                  Add to cart
-                                                              </Link>
-                                                          </li> */}
+                                <li className="list-inline-item m-0 p-0">
+                                  <span className="btn btn-sm btn-outline-dark">
+                                    <i className="fas fa-heart"></i>
+                                  </span>
+                                </li>
+                                <li className="list-inline-item m-0 p-0">
+                                  <Link
+                                    className="btn btn-sm btn-dark"
+                                    to={`/detail/${value._id}`}
+                                  >
+                                    Xem chi tiết
+                                  </Link>
+                                </li>
                               </ul>
                             </div>
                           </div>
-                          <h6>
+                          <strong>
                             <Link
                               className="reset-anchor"
                               to={`/detail/${value._id}`}
                             >
                               {value.name}
                             </Link>
-                          </h6>
+                          </strong>
                           <p className="small text-muted">
                             {convertMoney(value.price)} VND
                           </p>

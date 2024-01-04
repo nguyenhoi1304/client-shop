@@ -198,7 +198,7 @@ button:active {
 }
 
 .product:hover img {
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
 .product:hover .product-overlay {

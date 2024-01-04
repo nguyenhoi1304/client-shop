@@ -2,13 +2,11 @@
 import React, { useEffect, useState } from "react";
 import queryString from "query-string";
 import ProductAPI from "../API/ProductAPI";
-import { Link } from "react-router-dom";
 import Search from "./Component/Search";
 import Pagination from "./Component/Pagination";
 import Products from "./Component/Products";
 import SortProduct from "./Component/SortProduct";
 import convertMoney from "../convertMoney";
-import ReactPaginate from "react-paginate";
 
 function Shop(props) {
   const [products, setProducts] = useState([]);
