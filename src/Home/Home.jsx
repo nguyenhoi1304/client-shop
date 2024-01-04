@@ -533,7 +533,7 @@ function Home(props) {
                             id="button-addon2"
                             type="submit"
                           >
-                            Subscribe
+                            Đăng ký
                           </button>
                         </div>
                       </div>
