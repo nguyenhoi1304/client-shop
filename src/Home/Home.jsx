@@ -4,9 +4,9 @@ import Image from "../Share/img/Image";
 import convertMoney from "../convertMoney";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
-import Carousel from "react-elastic-carousel";
 import Item from "./Item";
 import Clock from "./Clock";
+import Carousel from "@itseasy21/react-elastic-carousel";
 
 function Home(props) {
   const [products, setProducts] = useState([]);
