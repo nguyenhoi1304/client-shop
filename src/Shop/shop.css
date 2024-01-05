@@ -24,3 +24,10 @@
 .header_category_border_bottom {
   border-bottom: 1px solid #e1e1e1;
 }
+
+.order-2 {
+  height: max-content;
+  background-color: var(--background-main-color);
+  border-radius: 10px;
+  padding: 20px;
+}

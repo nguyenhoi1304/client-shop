@@ -12,6 +12,16 @@ import styles from "./Header.module.css";
 function Header(props) {
   const dispatch = useDispatch();
 
+  const listMenuItem = [
+    "trang chủ",
+    "giới thiệu",
+    "tin tức",
+    "Chương trình khuyến mãi",
+    "Công thức làm bánh",
+    "Liên hệ",
+    "Đặt nhanh",
+  ];
+
   //Sau khi F5 nó sẽ kiểm tra nếu phiên làm việc của Session vẫn còn thì nó sẽ tiếp tục
   // đưa dữ liệu vào Redux
   if (localStorage.getItem("id_user")) {
@@ -47,19 +57,7 @@ function Header(props) {
     <div className={styles.header}>
       <div className="fluid px-0 px-lg-3">
         <nav className="navbar navbar-expand-lg navbar-light  ">
-          <div className="navbar-brand" to={`/`}>
-            <input
-              type="search"
-              placeholder="Bạn cần tìm gì?..."
-              className={styles.search_input}
-            />
-            <span>
-              <button className={styles.btn_search}>
-                <i className="fas fa-search mr-1 text-white" />
-                Tìm Kiếm
-              </button>
-            </span>
-          </div>
+          {/* button icon menu */}
           <button
             className="navbar-toggler"
             type="button"
@@ -71,22 +69,45 @@ function Header(props) {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <ul className="navbar-nav mr-auto">
+            {/* list item right */}
+            <ul className="navbar-nav mr-auto align-items-center">
               <li className="nav-item">
                 <Link className="nav-link" to={`/`}>
                   <img className={styles.img_logo} src={logo} alt="logo" />
                 </Link>
               </li>
+              {listMenuItem.map((item) => (
+                <li className="nav-item">
+                  <Link className="nav-link" to={`/`}>
+                    <span className="text-white">{item}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
-            <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
+            {/* list item left */}
+            <ul className="navbar-nav d-flex align-items-center">
+              <li className="nav-item px-1">
+                <input
+                  type="search"
+                  placeholder="Bạn cần tìm gì?..."
+                  className={styles.search_input}
+                />
+                <span>
+                  <button className={styles.btn_search}>
+                    <i className="fas fa-search mr-1 text-white" />
+                    Tìm Kiếm
+                  </button>
+                </span>
+              </li>
+              <li className="nav-item px-1">
                 <Link className="nav-link" to={`/shop`}>
                   <i className="fas fa-store mr-1 text-white"></i>
                   <span className={styles.cart}>Cửa hàng</span>
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item px-1">
                 <Link className="nav-link" to={`/cart`}>
                   <i className="fas fa-dolly-flatbed mr-1 text-white"></i>
                   <span className={styles.cart}>Giỏ hàng</span>

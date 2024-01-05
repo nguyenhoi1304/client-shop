@@ -7,7 +7,7 @@ import Pagination from "./Component/Pagination";
 import Products from "./Component/Products";
 import SortProduct from "./Component/SortProduct";
 import convertMoney from "../convertMoney";
-import menuIcon from "../Share/img/menu_icon_2.png";
+import ImgIcon from "../Share/img/index";
 
 function Shop(props) {
   const [products, setProducts] = useState([]);
@@ -249,27 +249,24 @@ function Shop(props) {
       <section className="py-5">
         <div className="container p-0">
           <div className="row">
-            <div
-              className="col-lg-3 order-2 order-lg-1 "
-              style={{ height: "max-content" }}
-            >
-              <div className="text-uppercase mb-4 header_category ">
+            <div className="col-lg-3 order-2 order-lg-1 ">
+              <div className="text-uppercase mb-4 header_category rounded ">
                 Danh mục sản phẩm
               </div>
-              <div className="py-2 px-4 mb-3 mt-3 bg-light">
+              <div className="py-2 px-4 mb-3 mt-3 bg-light rounded ">
                 <strong className="small text-uppercase font-weight-bold ">
                   Bánh Cao Cấp
                 </strong>
               </div>
-              <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal header_category_border_bottom">
-                <li className="mb-2">
+              <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal ">
+                <li className="mb-3">
                   <img
-                    src={menuIcon}
+                    src={ImgIcon.iconMenu}
                     alt="image_icon"
                     style={{ filter: "saturate(3)" }}
                   />
                   <a
-                    className="reset-anchor"
+                    className="reset-anchor ml-2 text-white"
                     href="#"
                     onClick={() => handlerCategory("all")}
                   >
@@ -277,33 +274,48 @@ function Shop(props) {
                   </a>
                 </li>
               </ul>
-              <div className="py-2 px-4 bg-light mb-3">
+              <div className="py-2 px-4 bg-light mb-3 rounded">
                 <strong className="small text-uppercase font-weight-bold">
                   Bánh tặng quà
                 </strong>
               </div>
-              <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal header_category_border_bottom">
-                <li className="mb-2 ">
+              <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal ">
+                <li className="mb-3 ">
+                  <img
+                    src={ImgIcon.chocolate}
+                    alt="image_icon"
+                    style={{ filter: "saturate(3)" }}
+                  />
                   <a
-                    className="reset-anchor "
+                    className="reset-anchor ml-2 text-white"
                     href="#"
                     onClick={() => handlerCategory("chocolate")}
                   >
                     Bánh Chocolate
                   </a>
                 </li>
-                <li className="mb-2">
+                <li className="mb-3">
+                  <img
+                    src={ImgIcon.custard}
+                    alt="image_icon"
+                    style={{ filter: "saturate(3)" }}
+                  />
                   <a
-                    className="reset-anchor"
+                    className="reset-anchor ml-2 text-white"
                     href="#"
                     onClick={() => handlerCategory("pastry")}
                   >
                     Bánh ngọt
                   </a>
                 </li>
-                <li className="mb-2">
+                <li className="mb-3">
+                  <img
+                    src={ImgIcon.custard}
+                    alt="image_icon"
+                    style={{ filter: "saturate(3)" }}
+                  />
                   <a
-                    className="reset-anchor"
+                    className="reset-anchor ml-2 text-white"
                     href="#"
                     onClick={() => handlerCategory("custard")}
                   >
@@ -311,42 +323,62 @@ function Shop(props) {
                   </a>
                 </li>
               </ul>
-              <div className="py-2 px-4 bg-light mb-3">
+              <div className="py-2 px-4 bg-light mb-3 rounded">
                 <strong className="small text-uppercase font-weight-bold">
                   Bánh ăn vặt
                 </strong>
               </div>
-              <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal header_category_border_bottom">
-                <li className="mb-2">
+              <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal ">
+                <li className="mb-3">
+                  <img
+                    src={ImgIcon.seasonal}
+                    alt="image_icon"
+                    style={{ filter: "saturate(3)" }}
+                  />
                   <a
-                    className="reset-anchor"
+                    className="reset-anchor ml-2 text-white"
                     href="#"
                     onClick={() => handlerCategory("seasonal")}
                   >
                     Bánh theo mùa
                   </a>
                 </li>
-                <li className="mb-2">
+                <li className="mb-3">
+                  <img
+                    src={ImgIcon.jelly}
+                    alt="image_icon"
+                    style={{ filter: "saturate(3)" }}
+                  />
                   <a
-                    className="reset-anchor"
+                    className="reset-anchor ml-2 text-white"
                     href="#"
                     onClick={() => handlerCategory("jelly")}
                   >
                     Bánh rau câu
                   </a>
                 </li>
-                <li className="mb-2">
+                <li className="mb-3">
+                  <img
+                    src={ImgIcon.bread}
+                    alt="image_icon"
+                    style={{ filter: "saturate(3)" }}
+                  />
                   <a
-                    className="reset-anchor"
+                    className="reset-anchor ml-2 text-white"
                     href="#"
                     onClick={() => handlerCategory("bread")}
                   >
                     Bánh mì
                   </a>
                 </li>
-                <li className="mb-2">
+                <li className="mb-3">
+                  <img
+                    src={ImgIcon.cheesecake}
+                    alt="image_icon"
+                    style={{ filter: "saturate(3)" }}
+                  />
                   <a
-                    className="reset-anchor"
+                    className="reset-anchor ml-2 text-white"
                     href="#"
                     onClick={() => handlerCategory("cheesecake")}
                   >
@@ -354,15 +386,15 @@ function Shop(props) {
                   </a>
                 </li>
               </ul>
-              <div className="py-2 px-4 bg-light mb-3">
+              <div className="py-2 px-4 bg-light mb-3 rounded">
                 <strong className="small text-uppercase font-weight-bold">
                   Các loại bánh khác
                 </strong>
               </div>
               <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal mb-5">
-                <li className="mb-2">
+                <li className="mb-3">
                   <a
-                    className="reset-anchor"
+                    className="reset-anchor ml-2 text-white"
                     href="#"
                     onClick={() => handlerCategory("other")}
                   >
@@ -371,7 +403,7 @@ function Shop(props) {
                 </li>
               </ul>
             </div>
-            <div className="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0">
+            <div className="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0 px-5">
               <div className="row mb-3 align-items-center">
                 {/* ------------------Search----------------- */}
                 <Search handlerSearch={handlerSearch} />

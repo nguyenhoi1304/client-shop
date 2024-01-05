@@ -23,7 +23,10 @@ function SortProduct(props) {
   };
 
   return (
-    <select className="selectpicker ml-auto" onChange={onChangeValue}>
+    <select
+      className="selectpicker ml-auto p-2 rounded"
+      onChange={onChangeValue}
+    >
       <option value="default">Giá cả ngẫu nhiên </option>
       <option value="DownToUp">Giá: thấp đến cao</option>
       <option value="UpToDown">Giá: cao xuống thấp</option>

@@ -36,9 +36,9 @@ function Search(props) {
   };
 
   return (
-    <div className="col-lg-4">
+    <div className="col-lg-4 ">
       <input
-        className="form-control form-control-lg"
+        className="form-control form-control-lg p-2 rounded"
         type="text"
         placeholder="Nhập để tìm kiếm...!"
         onChange={onChangeText}
