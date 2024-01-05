@@ -6,6 +6,8 @@ html {
 
 .modal-content {
   border: none;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .modal:target {

@@ -6,9 +6,9 @@ function Footer(props) {
     <footer className="footer ">
       <div className="container py-4 text-white">
         <div className="row py-5 text-white">
-          <div className="col-md-4 mb-3 mb-md-0">
+          <div className="col-md-4 mb-3 mb-md-0 text-center">
             <h6 className="text-uppercase mb-3 ">Hỗ trợ khách hàng</h6>
-            <ul className="list-unstyled mb-0">
+            <ul className="list-unstyled mb-0 ">
               <li>
                 <i className="fas fa-home mr-1 text-white"></i>
                 <a className="footer-link" href="#">
@@ -35,7 +35,7 @@ function Footer(props) {
               </li>
             </ul>
           </div>
-          <div className="col-md-4 mb-3 mb-md-0">
+          <div className="col-md-4 mb-3 mb-md-0 text-center">
             <h6 className="text-uppercase mb-3">Chính sách</h6>
             <ul className="list-unstyled mb-0">
               <li>
@@ -60,9 +60,9 @@ function Footer(props) {
               </li>
             </ul>
           </div>
-          <div className="col-md-4">
+          <div className="col-md-4 text-center">
             <h6 className="text-uppercase mb-3">THEO DÕI CHÚNG TÔI TRÊN</h6>
-            <ul className="list-unstyled mb-0">
+            <ul className="list-unstyled mb-0 ">
               <li>
                 <a className="footer-link" href="#">
                   Twitter

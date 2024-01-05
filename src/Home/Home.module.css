@@ -30,40 +30,57 @@
 .btn_condition {
   color: blue;
 }
+.cards_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+}
 .card_sale {
   border-radius: 15px;
   border-left: 1px dotted #ccc;
   background-color: #cccccc71;
 }
+.text_title {
+  color: rgba(255, 255, 255, 0.795);
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  margin-top: 10px;
+}
 
 .card_love {
-  height: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
+  height: 400px;
+  padding: 20px;
   width: 100%;
-  background-color: var(--background-main-color);
-  color: #fff;
-  margin: 15px;
-  font-size: 4em;
+  background-color: #ec71c3;
   border-radius: 10px;
 }
-.card_love:hover {
-  opacity: 0.8;
-}
-.description {
-  color: #fff;
-  font-size: 1rem;
-  margin-top: 10px;
+.card {
+  background-color: white;
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
   text-align: center;
+  margin-left: 14%;
+  border-radius: 10px;
+}
+
+.description {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 5px 0;
 }
 
 .img_love {
-  width: 100%;
-  height: 60%;
+  height: 200px;
+  width: 200px;
   border-radius: 10px;
-  margin-top: 15px;
+  margin: 0 15px;
+}
+.img_love:hover {
+  opacity: 0.8;
 }
 
 .title {
@@ -79,12 +96,6 @@
   padding: 5px 10px;
 }
 
-.text_title {
-  color: rgba(255, 255, 255, 0.795);
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  margin-top: 10px;
-}
 .bestseller {
   display: flex;
   justify-content: space-between;

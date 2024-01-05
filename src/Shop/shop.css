@@ -12,3 +12,15 @@
   text-align: center;
   opacity: 0.9;
 }
+
+.header_category {
+  width: 100%;
+  padding: 15px;
+  font-weight: 600;
+  background-color: rgb(202, 70, 70);
+  color: #fff;
+}
+
+.header_category_border_bottom {
+  border-bottom: 1px solid #e1e1e1;
+}

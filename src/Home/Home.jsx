@@ -5,7 +5,8 @@ import convertMoney from "../convertMoney";
 import { Link } from "react-router-dom";
 import styles from "./Home.module.css";
 import Clock from "./Clock";
-import Carousel from "@itseasy21/react-elastic-carousel";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 function Home(props) {
   const [products, setProducts] = useState([]);
@@ -83,13 +84,26 @@ function Home(props) {
     fetchData();
   }, []);
 
-  // react-elastic-carousel
-  const breakPoints = [
-    { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 2 },
-    { width: 768, itemsToShow: 4 },
-    { width: 1200, itemsToShow: 5 },
-  ];
+  //react-multi-carousel
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 2500 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 2500, min: 1024 },
+      items: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
 
   return (
     <>
@@ -329,7 +343,11 @@ function Home(props) {
               <header className={styles.love}>
                 <div className={styles.title}>
                   <span className={styles.text_title}>
-                    <i className="fas fa-heart mr-2"></i>mùa yêu, deal ngọt
+                    <i
+                      className="fas fa-heart mr-2"
+                      style={{ color: "red" }}
+                    ></i>
+                    mùa yêu, deal ngọt
                   </span>
                   <span className={styles.jump}>H</span>
                   <span className={styles.jump}>O</span>
@@ -349,34 +367,52 @@ function Home(props) {
                   </span>
                 </div>
               ) : (
-                <section className="mt-5">
-                  <Carousel breakPoints={breakPoints}>
-                    {productsLove?.map(
-                      (product) =>
-                        product.category === "chocolate" && (
-                          <div key={product._id} className={styles.card_love}>
-                            <a
-                              className="d-block"
-                              href={`#product_${product._id}`}
-                              data-toggle="modal"
-                            >
-                              <img
-                                className={styles.img_love}
-                                src={product.img1}
-                                alt="product_image"
-                              />
-                              <p className={styles.description}>
-                                {product.name}
-                              </p>
-                              <p className={styles.description}>
-                                {convertMoney(product.price)} VND
-                              </p>
-                            </a>
-                          </div>
-                        )
-                    )}
-                  </Carousel>
-                </section>
+                <>
+                  <section className="mt-3">
+                    <Carousel
+                      swipeable={false}
+                      draggable={false}
+                      showDots={true}
+                      responsive={responsive}
+                      ssr={true} // means to render carousel on server-side.
+                      infinite={true} // cuộn đến hết item thì thôi
+                      keyBoardControl={true}
+                      transitionDuration={500}
+                      rtl={true}
+                      containerClass="carousel-container"
+                      removeArrowOnDeviceType={["tablet", "mobile"]}
+                      deviceType={props.deviceType}
+                      dotListClass="custom-dot-list-style"
+                      itemClass="carousel-item-padding-40-px"
+                      className={styles.card_love}
+                    >
+                      {productsLove?.map(
+                        (product) =>
+                          product.category === "chocolate" && (
+                            <div key={product._id} className={styles.card}>
+                              <a
+                                className="d-block"
+                                href={`#product_${product._id}`}
+                                data-toggle="modal"
+                              >
+                                <img
+                                  className={styles.img_love}
+                                  src={product.img1}
+                                  alt="product_image"
+                                />
+                                <p className={styles.description}>
+                                  {product.name}
+                                </p>
+                                <p className={styles.description}>
+                                  {convertMoney(product.price)} VND
+                                </p>
+                              </a>
+                            </div>
+                          )
+                      )}
+                    </Carousel>
+                  </section>
+                </>
               )}
             </section>
 

@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@itseasy21/react-elastic-carousel": "^0.12.3",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
@@ -12,7 +11,9 @@
     "next": "^14.0.2",
     "query-string": "^6.13.8",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.9.2",
     "react-dom": "^18.2.0",
+    "react-multi-carousel": "^2.8.4",
     "react-paginate": "^8.2.0",
     "react-redux": "^7.2.2",
     "react-scripts": "^4.0.1",

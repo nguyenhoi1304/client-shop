@@ -7,6 +7,7 @@ import Pagination from "./Component/Pagination";
 import Products from "./Component/Products";
 import SortProduct from "./Component/SortProduct";
 import convertMoney from "../convertMoney";
+import menuIcon from "../Share/img/menu_icon_2.png";
 
 function Shop(props) {
   const [products, setProducts] = useState([]);
@@ -248,15 +249,25 @@ function Shop(props) {
       <section className="py-5">
         <div className="container p-0">
           <div className="row">
-            <div className="col-lg-3 order-2 order-lg-1">
-              <h5 className="text-uppercase mb-4">Danh mục sản phẩm</h5>
-              <div className="py-2 px-4 bg-dark text-white mb-3">
-                <strong className="small text-uppercase font-weight-bold">
+            <div
+              className="col-lg-3 order-2 order-lg-1 "
+              style={{ height: "max-content" }}
+            >
+              <div className="text-uppercase mb-4 header_category ">
+                Danh mục sản phẩm
+              </div>
+              <div className="py-2 px-4 mb-3 mt-3 bg-light">
+                <strong className="small text-uppercase font-weight-bold ">
                   Bánh Cao Cấp
                 </strong>
               </div>
-              <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal">
+              <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal header_category_border_bottom">
                 <li className="mb-2">
+                  <img
+                    src={menuIcon}
+                    alt="image_icon"
+                    style={{ filter: "saturate(3)" }}
+                  />
                   <a
                     className="reset-anchor"
                     href="#"
@@ -271,10 +282,10 @@ function Shop(props) {
                   Bánh tặng quà
                 </strong>
               </div>
-              <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal">
-                <li className="mb-2">
+              <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal header_category_border_bottom">
+                <li className="mb-2 ">
                   <a
-                    className="reset-anchor"
+                    className="reset-anchor "
                     href="#"
                     onClick={() => handlerCategory("chocolate")}
                   >
@@ -305,7 +316,7 @@ function Shop(props) {
                   Bánh ăn vặt
                 </strong>
               </div>
-              <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal">
+              <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal header_category_border_bottom">
                 <li className="mb-2">
                   <a
                     className="reset-anchor"
