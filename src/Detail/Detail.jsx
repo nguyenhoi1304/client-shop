@@ -8,6 +8,7 @@ import CartAPI from "../API/CartAPI";
 import queryString from "query-string";
 import CommentAPI from "../API/CommentAPI";
 import convertMoney from "../convertMoney";
+import styles from "./Detail.module.css";
 
 function Detail(props) {
   const [detail, setDetail] = useState({});
@@ -236,22 +237,38 @@ function Detail(props) {
         <div className="row mb-5">
           <div className="col-lg-6">
             <div className="row m-sm-0">
-              <div className="col-sm-2 p-sm-0 order-2 order-sm-1 mt-2 mt-sm-0">
+              <div className="col-sm-2 p-sm-0 order-sm-1 mt-2 mt-sm-0">
                 <div
                   className="owl-thumbs d-flex flex-row flex-sm-column"
                   data-slider-id="1"
                 >
-                  <div className="owl-thumb-item flex-fill mb-2 mr-2 mr-sm-0">
-                    <img className="w-100" src={detail.img1} alt="..." />
+                  <div className="owl-thumb-item flex-fill mb-3 mr-2 mr-sm-0">
+                    <img
+                      className="w-100 bg-white"
+                      src={detail.img1}
+                      alt="..."
+                    />
                   </div>
-                  <div className="owl-thumb-item flex-fill mb-2 mr-2 mr-sm-0">
-                    <img className="w-100" src={detail.img2} alt="..." />
+                  <div className="owl-thumb-item flex-fill mb-3 mr-2 mr-sm-0">
+                    <img
+                      className="w-100 bg-white"
+                      src={detail.img2}
+                      alt="..."
+                    />
                   </div>
-                  <div className="owl-thumb-item flex-fill mb-2 mr-2 mr-sm-0">
-                    <img className="w-100" src={detail.img3} alt="..." />
+                  <div className="owl-thumb-item flex-fill mb-3 mr-2 mr-sm-0">
+                    <img
+                      className="w-100 bg-white"
+                      src={detail.img3}
+                      alt="..."
+                    />
                   </div>
-                  <div className="owl-thumb-item flex-fill mb-2 mr-2 mr-sm-0">
-                    <img className="w-100" src={detail.img4} alt="..." />
+                  <div className="owl-thumb-item flex-fill mb-3 mr-2 mr-sm-0">
+                    <img
+                      className="w-100 bg-white"
+                      src={detail.img4}
+                      alt="..."
+                    />
                   </div>
                 </div>
               </div>
@@ -264,28 +281,28 @@ function Detail(props) {
                 <div className="carousel-inner owl-carousel product-slider">
                   <div className="carousel-item active">
                     <img
-                      className="d-block w-100"
+                      className={styles.product_img_carousel}
                       src={detail.img1}
                       alt="First slide"
                     />
                   </div>
                   <div className="carousel-item">
                     <img
-                      className="d-block w-100"
+                      className={styles.product_img_carousel}
                       src={detail.img2}
                       alt="Second slide"
                     />
                   </div>
                   <div className="carousel-item">
                     <img
-                      className="d-block w-100"
+                      className={styles.product_img_carousel}
                       src={detail.img3}
                       alt="Third slide"
                     />
                   </div>
                   <div className="carousel-item">
                     <img
-                      className="d-block w-100"
+                      className={styles.product_img_carousel}
                       src={detail.img4}
                       alt="Third slide"
                     />
@@ -406,33 +423,7 @@ function Detail(props) {
 					</div>
 				</div> */}
         <br />
-        <ul className="nav nav-tabs border-0">
-          <li className="nav-item">
-            <a
-              className="nav-link fix_comment"
-              onClick={() => handlerReview("description")}
-              style={
-                review === "description"
-                  ? { backgroundColor: "#383838", color: "#ffffff" }
-                  : { color: "#383838" }
-              }
-            >
-              Mô tả
-            </a>
-          </li>
-          {/* <li className='nav-item'>
-						<a
-							className='nav-link fix_comment'
-							onClick={() => handlerReview('review')}
-							style={
-								review === 'review'
-									? { backgroundColor: '#383838', color: '#ffffff' }
-									: { color: '#383838' }
-							}>
-							Reviews
-						</a>
-					</li> */}
-        </ul>
+
         <div className="tab-content mb-5">
           {review === "description" ? (
             <div className="tab-pane fade show active">
@@ -508,23 +499,23 @@ function Detail(props) {
                 <div className="col-lg-3 col-sm-6" key={value._id}>
                   <div className="product text-center skel-loader">
                     <div className="d-block mb-3 position-relative">
-                      <img
-                        className="img-fluid w-100"
-                        src={value.img1}
-                        alt="..."
-                      />
+                      <Link
+                        className="reset-anchor"
+                        to={`/detail/${value._id}`}
+                        onClick={window.scrollTo(0, 0)}
+                      >
+                        <img
+                          className={styles.product_img}
+                          src={value.img1}
+                          alt="..."
+                        />
+                      </Link>
+
                       <div className="product-overlay">
                         <ul className="mb-0 list-inline"></ul>
                       </div>
                     </div>
-                    <h6>
-                      <Link
-                        className="reset-anchor"
-                        to={`/detail/${value._id}`}
-                      >
-                        {value.name}
-                      </Link>
-                    </h6>
+                    <h6>{value.name}</h6>
                     <p className="small text-muted">
                       {convertMoney(value.price)} VND
                     </p>
