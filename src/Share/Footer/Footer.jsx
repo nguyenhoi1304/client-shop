@@ -23,26 +23,26 @@ function Footer(props) {
             <h6 className="text-uppercase mb-3 ">Hỗ trợ khách hàng</h6>
             <ul className="list-unstyled mb-0 ">
               <li>
-                <i className="fas fa-home mr-2 text-white"></i>
                 <a className="footer-link" href="#">
+                  <i className="fas fa-home mr-2 text-white"></i>
                   123 Nguyễn Tư giản, Đà Nẵng
                 </a>
               </li>
               <li>
-                <i className="fas fa-phone mr-2 text-white"></i>
                 <a className="footer-link" href="#">
+                  <i className="fas fa-phone mr-2 text-white"></i>
                   Hotline: 091 353 3457 – 09 1425 2542
                 </a>
               </li>
               <li>
-                <i className="fas fa-envelope mr-2 text-white"></i>
                 <a className="footer-link" href="#">
+                  <i className="fas fa-envelope mr-2 text-white"></i>
                   Email : nguyenhoi130499@gmail.com
                 </a>
               </li>
               <li>
-                <i className="fas fa-share mr-2 text-white"></i>
                 <a className="footer-link" href="#">
+                  <i className="fas fa-share mr-2 text-white"></i>
                   Facebook : fb.com/nguyenhoi130499
                 </a>
               </li>
@@ -52,27 +52,26 @@ function Footer(props) {
             <h6 className="text-uppercase mb-3">Chính sách</h6>
             <ul className="list-unstyled mb-0">
               <li>
-                <FontAwesomeIcon className="mr-2" icon={faPhone} />
                 <a className="footer-link" href="#">
+                  <FontAwesomeIcon className="mr-2" icon={faPhone} />
                   Liên Hệ
                 </a>
               </li>
               <li>
-                <FontAwesomeIcon className="mr-2" icon={faNewspaper} />
                 <a className="footer-link" href="#">
+                  <FontAwesomeIcon className="mr-2" icon={faNewspaper} />
                   Tin tức
                 </a>
               </li>
               <li>
-                <FontAwesomeIcon className="mr-2" icon={faPersonChalkboard} />
                 <a className="footer-link" href="#">
+                  <FontAwesomeIcon className="mr-2" icon={faPersonChalkboard} />
                   Hướng dẫn làm bánh
                 </a>
               </li>
               <li>
-                <FontAwesomeIcon className="mr-2" icon={faReply} />
-
                 <a className="footer-link" href="#">
+                  <FontAwesomeIcon className="mr-2" icon={faReply} />
                   Trả lời và hỏi đáp
                 </a>
               </li>
@@ -82,28 +81,26 @@ function Footer(props) {
             <h6 className="text-uppercase mb-3">THEO DÕI CHÚNG TÔI TRÊN</h6>
             <ul className="list-unstyled mb-0 ">
               <li>
-                <FontAwesomeIcon className="mr-2" icon={faTwitter} />
-
                 <a className="footer-link" href="#">
+                  <FontAwesomeIcon className="mr-2" icon={faTwitter} />
                   Twitter
                 </a>
               </li>
               <li>
-                <FontAwesomeIcon className="mr-2" icon={faInstagram} />
-
                 <a className="footer-link" href="#">
+                  <FontAwesomeIcon className="mr-2" icon={faInstagram} />
                   Instagram
                 </a>
               </li>
               <li>
-                <FontAwesomeIcon className="mr-2" icon={faFacebook} />
                 <a className="footer-link" href="#">
+                  <FontAwesomeIcon className="mr-2" icon={faFacebook} />
                   Facebook
                 </a>
               </li>
               <li>
-                <FontAwesomeIcon className="mr-2" icon={faPinterest} />
                 <a className="footer-link" href="#">
+                  <FontAwesomeIcon className="mr-2" icon={faPinterest} />
                   Pinterest
                 </a>
               </li>

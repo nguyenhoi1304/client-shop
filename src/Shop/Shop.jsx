@@ -259,19 +259,20 @@ function Shop(props) {
                 </strong>
               </div>
               <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal ">
-                <li className="mb-3">
+                <li className="mb-3 ">
                   <img
                     src={ImgIcon.iconMenu}
                     alt="image_icon"
                     style={{ filter: "saturate(3)" }}
                   />
-                  <a
-                    className="reset-anchor ml-2 text-white"
-                    href="#"
+                  <span
                     onClick={() => handlerCategory("all")}
+                    className={
+                      pagination.category === "all" ? "active" : "none_active"
+                    }
                   >
                     Bộ sưu tập bánh
-                  </a>
+                  </span>
                 </li>
               </ul>
               <div className="py-2 px-4 bg-light mb-3 rounded">
@@ -286,13 +287,16 @@ function Shop(props) {
                     alt="image_icon"
                     style={{ filter: "saturate(3)" }}
                   />
-                  <a
-                    className="reset-anchor ml-2 text-white"
-                    href="#"
+                  <span
                     onClick={() => handlerCategory("chocolate")}
+                    className={
+                      pagination.category === "chocolate"
+                        ? "active"
+                        : "none_active"
+                    }
                   >
                     Bánh Chocolate
-                  </a>
+                  </span>
                 </li>
                 <li className="mb-3">
                   <img
@@ -300,13 +304,16 @@ function Shop(props) {
                     alt="image_icon"
                     style={{ filter: "saturate(3)" }}
                   />
-                  <a
-                    className="reset-anchor ml-2 text-white"
-                    href="#"
+                  <span
+                    className={
+                      pagination.category === "pastry"
+                        ? "active"
+                        : "none_active"
+                    }
                     onClick={() => handlerCategory("pastry")}
                   >
                     Bánh ngọt
-                  </a>
+                  </span>
                 </li>
                 <li className="mb-3">
                   <img
@@ -314,13 +321,16 @@ function Shop(props) {
                     alt="image_icon"
                     style={{ filter: "saturate(3)" }}
                   />
-                  <a
-                    className="reset-anchor ml-2 text-white"
-                    href="#"
+                  <span
+                    className={
+                      pagination.category === "custard"
+                        ? "active"
+                        : "none_active"
+                    }
                     onClick={() => handlerCategory("custard")}
                   >
                     Bánh bông lan
-                  </a>
+                  </span>
                 </li>
               </ul>
               <div className="py-2 px-4 bg-light mb-3 rounded">
@@ -335,13 +345,16 @@ function Shop(props) {
                     alt="image_icon"
                     style={{ filter: "saturate(3)" }}
                   />
-                  <a
-                    className="reset-anchor ml-2 text-white"
-                    href="#"
+                  <span
+                    className={
+                      pagination.category === "seasonal"
+                        ? "active"
+                        : "none_active"
+                    }
                     onClick={() => handlerCategory("seasonal")}
                   >
                     Bánh theo mùa
-                  </a>
+                  </span>
                 </li>
                 <li className="mb-3">
                   <img
@@ -349,13 +362,14 @@ function Shop(props) {
                     alt="image_icon"
                     style={{ filter: "saturate(3)" }}
                   />
-                  <a
-                    className="reset-anchor ml-2 text-white"
-                    href="#"
+                  <span
+                    className={
+                      pagination.category === "jelly" ? "active" : "none_active"
+                    }
                     onClick={() => handlerCategory("jelly")}
                   >
                     Bánh rau câu
-                  </a>
+                  </span>
                 </li>
                 <li className="mb-3">
                   <img
@@ -363,27 +377,31 @@ function Shop(props) {
                     alt="image_icon"
                     style={{ filter: "saturate(3)" }}
                   />
-                  <a
-                    className="reset-anchor ml-2 text-white"
-                    href="#"
+                  <span
+                    className={
+                      pagination.category === "bread" ? "active" : "none_active"
+                    }
                     onClick={() => handlerCategory("bread")}
                   >
                     Bánh mì
-                  </a>
+                  </span>
                 </li>
-                <li className="mb-3">
+                <li className="mb-3 ">
                   <img
                     src={ImgIcon.cheesecake}
                     alt="image_icon"
                     style={{ filter: "saturate(3)" }}
                   />
-                  <a
-                    className="reset-anchor ml-2 text-white"
-                    href="#"
+                  <span
+                    className={
+                      pagination.category === "cheesecake"
+                        ? "active"
+                        : "none_active"
+                    }
                     onClick={() => handlerCategory("cheesecake")}
                   >
                     Bánh kem
-                  </a>
+                  </span>
                 </li>
               </ul>
               <div className="py-2 px-4 bg-light mb-3 rounded">
@@ -393,13 +411,14 @@ function Shop(props) {
               </div>
               <ul className="list-unstyled small text-muted pl-lg-4 font-weight-normal mb-5">
                 <li className="mb-3">
-                  <a
-                    className="reset-anchor ml-2 text-white"
-                    href="#"
+                  <span
+                    className={
+                      pagination.category === "other" ? "active" : "none_active"
+                    }
                     onClick={() => handlerCategory("other")}
                   >
                     Bánh khác
-                  </a>
+                  </span>
                 </li>
               </ul>
             </div>

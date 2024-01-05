@@ -31,3 +31,40 @@
   border-radius: 10px;
   padding: 20px;
 }
+
+.card {
+  background-color: white;
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  text-align: center;
+  margin-left: 14%;
+  border-radius: 10px;
+  margin-left: 0;
+}
+
+.product_img {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  margin: 0 15px;
+  box-shadow: 7px 12px 9px #ccc;
+}
+.product_img:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+.mb-3 .active {
+  color: yellow;
+  margin-left: 10px;
+  text-decoration: none;
+}
+.mb-3 .active:hover,
+.mb-3 .none_active:hover {
+  cursor: pointer;
+}
+.mb-3 .none_active {
+  color: white;
+  margin-left: 10px;
+  text-decoration: none;
+}

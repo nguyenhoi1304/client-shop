@@ -80,7 +80,7 @@ function Header(props) {
               </li>
               {listMenuItem.map((item) => (
                 <li className="nav-item">
-                  <Link className="nav-link" to={`/`}>
+                  <Link className="nav-link " to={`/`}>
                     <span className="text-white">{item}</span>
                   </Link>
                 </li>
@@ -102,7 +102,7 @@ function Header(props) {
                 </span>
               </li>
               <li className="nav-item px-1">
-                <Link className="nav-link" to={`/shop`}>
+                <Link className="nav-link active" to={`/shop`}>
                   <i className="fas fa-store mr-1 text-white"></i>
                   <span className={styles.cart}>Cửa hàng</span>
                 </Link>

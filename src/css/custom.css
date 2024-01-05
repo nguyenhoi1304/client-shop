@@ -7,7 +7,7 @@ html {
 .modal-content {
   border: none;
   border-radius: 10px;
-  padding: 20px;
+  padding: 30px;
 }
 
 .modal:target {

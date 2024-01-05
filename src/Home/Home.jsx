@@ -451,17 +451,17 @@ function Home(props) {
                               data-toggle="modal"
                             >
                               <img
-                                className={styles.img_love}
+                                className={styles.product_img}
                                 src={value.img1}
                                 alt=""
                               />
                             </a>
                             {/*  overlay */}
-                            <div className="product-overlay">
-                              <ul className="mb-0 list-inline">
+                            <div className="product-overlay ">
+                              <ul className="mb-0 list-inline ">
                                 <li className="list-inline-item m-0 p-0">
                                   <span className="btn btn-sm btn-outline-dark">
-                                    <i className="fas fa-heart"></i>
+                                    <i className="fas fa-heart text-danger"></i>
                                   </span>
                                 </li>
                                 <li className="list-inline-item m-0 p-0">

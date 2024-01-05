@@ -35,32 +35,29 @@ function Products(props) {
             <div className="product text-center">
               <div className="position-relative mb-3">
                 <div className="badge text-white badge-"></div>
-                <div>
+                <div className="card">
                   <Link className="d-block" to={`/detail/${value._id}`}>
-                    <img
-                      className="img-fluid w-100"
-                      src={value.img1}
-                      alt="..."
-                    />
+                    <img className="product_img" src={value.img1} alt="..." />
                     {/* Hiển thị thông báo hết hàng khi số lượng sản phẩm trong kho = 0 */}
                     {value.count === 0 && (
                       <div className="message_outOfStock">Hết Hàng </div>
                     )}
                   </Link>
+                  <div className="mt-4">
+                    <h6>
+                      <a className="reset-anchor " href="detail.html">
+                        {value.name}
+                      </a>
+                    </h6>
+                    <p className="small text-muted">
+                      {convertMoney(value.price)} VND
+                    </p>
+                  </div>
                 </div>
                 <div className="product-overlay">
                   <ul className="mb-0 list-inline"></ul>
                 </div>
               </div>
-              <h6>
-                {" "}
-                <a className="reset-anchor" href="detail.html">
-                  {value.name}
-                </a>
-              </h6>
-              <p className="small text-muted">
-                {convertMoney(value.price)} VND
-              </p>
             </div>
           </div>
         ))}

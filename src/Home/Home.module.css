@@ -66,6 +66,15 @@
   margin-left: 14%;
   border-radius: 10px;
 }
+.card_sell {
+  background-color: white;
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 30px;
+}
 
 .description {
   font-size: 1.1rem;
@@ -79,8 +88,17 @@
   border-radius: 10px;
   margin: 0 15px;
 }
-.img_love:hover {
-  opacity: 0.8;
+.card:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.product_img {
+  height: 200px;
+  width: 200px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 7px 12px 9px #ccc;
 }
 
 .title {

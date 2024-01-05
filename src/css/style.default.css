@@ -197,10 +197,6 @@ button:active {
   opacity: 0;
 }
 
-.product:hover img {
-  opacity: 0.6;
-}
-
 .product:hover .product-overlay {
   opacity: 1;
 }
@@ -274,7 +270,7 @@ button:active {
   opacity: 1;
 }
 
-.footer-link::before {
+/* .footer-link::before {
   content: "\f0da";
   display: inline-block;
   font-weight: 900;
@@ -286,7 +282,7 @@ button:active {
   color: #fff;
   transition: all 0.3s;
   opacity: 0;
-}
+} */
 
 /*
 * ===================================================
@@ -3561,9 +3557,6 @@ code {
 /*
 * 11. MODALS
 */
-.modal-content {
-  border-radius: 0;
-}
 
 @media (min-width: 992px) {
   .modal-lg {
