@@ -11,16 +11,22 @@ import styles from "./Header.module.css";
 
 function Header(props) {
   const dispatch = useDispatch();
+  const [valueActive, setValueActive] = useState("home");
 
-  const listMenuItem = [
-    "trang chủ",
-    "giới thiệu",
-    "tin tức",
-    "Chương trình khuyến mãi",
-    "Công thức làm bánh",
-    "Liên hệ",
-    "Đặt nhanh",
-  ];
+  const listMenuItemLeft = {
+    home: "Trang chủ",
+    introduce: "Giới thiệu",
+    news: "Tin tức",
+    promotion: "Khuyến mãi",
+    formula: "Công thức làm bánh",
+    contact: "Liên hệ",
+    book: "Đặt nhanh",
+  };
+
+  const listMenuItemRight = {
+    store: "Cửa hàng",
+    cart: "Giỏ hàng",
+  };
 
   //Sau khi F5 nó sẽ kiểm tra nếu phiên làm việc của Session vẫn còn thì nó sẽ tiếp tục
   // đưa dữ liệu vào Redux
@@ -53,6 +59,10 @@ function Header(props) {
     }
   }, [idUser]);
 
+  const handleActive = (value) => {
+    setValueActive(value);
+  };
+
   return (
     <div className={styles.header}>
       <div className="fluid px-0 px-lg-3">
@@ -71,22 +81,115 @@ function Header(props) {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            {/* list item right */}
             <ul className="navbar-nav mr-auto align-items-center">
               <li className="nav-item">
-                <Link className="nav-link" to={`/`}>
-                  <img className={styles.img_logo} src={logo} alt="logo" />
+                <img className={styles.img_logo} src={logo} alt="logo" />
+              </li>
+              {/* list item left */}
+              <li className="nav-item" onClick={() => handleActive("home")}>
+                <Link className="nav-link " to={`/`}>
+                  <span
+                    className={
+                      valueActive === "home"
+                        ? styles.active
+                        : styles.none_active
+                    }
+                  >
+                    {listMenuItemLeft.home}
+                  </span>
                 </Link>
               </li>
-              {listMenuItem.map((item) => (
-                <li className="nav-item">
-                  <Link className="nav-link " to={`/`}>
-                    <span className="text-white">{item}</span>
-                  </Link>
-                </li>
-              ))}
+
+              <li
+                className="nav-item"
+                onClick={() => handleActive("introduce")}
+              >
+                <Link className="nav-link " to={`/`}>
+                  <span
+                    className={
+                      valueActive === "introduce"
+                        ? styles.active
+                        : styles.none_active
+                    }
+                  >
+                    {listMenuItemLeft.introduce}
+                  </span>
+                </Link>
+              </li>
+              <li
+                className="nav-item"
+                onClick={() => handleActive("Công thức làm bánh")}
+              >
+                <Link className="nav-link " to={`/`}>
+                  <span
+                    className={
+                      valueActive === "Công thức làm bánh"
+                        ? styles.active
+                        : styles.none_active
+                    }
+                  >
+                    {listMenuItemLeft.formula}
+                  </span>
+                </Link>
+              </li>
+              <li className="nav-item" onClick={() => handleActive("news")}>
+                <Link className="nav-link " to={`/`}>
+                  <span
+                    className={
+                      valueActive === "news"
+                        ? styles.active
+                        : styles.none_active
+                    }
+                  >
+                    {listMenuItemLeft.news}
+                  </span>
+                </Link>
+              </li>
+              <li className="nav-item" onClick={() => handleActive("contact")}>
+                <Link className="nav-link " to={`/`}>
+                  <span
+                    className={
+                      valueActive === "contact"
+                        ? styles.active
+                        : styles.none_active
+                    }
+                  >
+                    {listMenuItemLeft.contact}
+                  </span>
+                </Link>
+              </li>
+              <li className="nav-item" onClick={() => handleActive("book")}>
+                <Link className="nav-link " to={`/`}>
+                  <span
+                    className={
+                      valueActive === "book"
+                        ? styles.active
+                        : styles.none_active
+                    }
+                  >
+                    {listMenuItemLeft.book}
+                  </span>
+                </Link>
+              </li>
+              <li
+                className="nav-item"
+                onClick={() => handleActive("promotion")}
+              >
+                <Link className="nav-link " to={`/`}>
+                  <span
+                    className={
+                      valueActive === "promotion"
+                        ? styles.active
+                        : styles.none_active
+                    }
+                  >
+                    {listMenuItemLeft.promotion}
+                  </span>
+                </Link>
+              </li>
             </ul>
-            {/* list item left */}
+
+            {/* list item right */}
             <ul className="navbar-nav d-flex align-items-center">
               <li className="nav-item px-1">
                 <input
@@ -101,16 +204,38 @@ function Header(props) {
                   </button>
                 </span>
               </li>
-              <li className="nav-item px-1">
+              <li
+                className="nav-item px-1"
+                onClick={() => handleActive("store")}
+              >
                 <Link className="nav-link active" to={`/shop`}>
                   <i className="fas fa-store mr-1 text-white"></i>
-                  <span className={styles.cart}>Cửa hàng</span>
+                  <span
+                    className={
+                      valueActive === "store"
+                        ? styles.active
+                        : styles.none_active
+                    }
+                  >
+                    {listMenuItemRight.store}
+                  </span>
                 </Link>
               </li>
-              <li className="nav-item px-1">
+              <li
+                className="nav-item px-1"
+                onClick={() => handleActive("cart")}
+              >
                 <Link className="nav-link" to={`/cart`}>
                   <i className="fas fa-dolly-flatbed mr-1 text-white"></i>
-                  <span className={styles.cart}>Giỏ hàng</span>
+                  <span
+                    className={
+                      valueActive === "cart"
+                        ? styles.active
+                        : styles.none_active
+                    }
+                  >
+                    {listMenuItemRight.cart}
+                  </span>
                 </Link>
               </li>
               {nameUser ? <Name /> : ""}
