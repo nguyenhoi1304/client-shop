@@ -4,6 +4,13 @@ import UserAPI from "../API/UserAPI";
 import "./Auth.css";
 import queryString from "query-string";
 import MessengerAPI from "../API/MessengerAPI";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faLock,
+  faPhone,
+  faVoicemail,
+} from "@fortawesome/free-solid-svg-icons";
 
 SignUp.propTypes = {};
 
@@ -147,7 +154,7 @@ function SignUp(props) {
     <div className="limiter">
       <div className="container-login100">
         <div className="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-          <span className="login100-form-title p-b-33">Đăng ký</span>
+          <span className="login100-form-title p-b-33 text-light">Đăng ký</span>
           <div className="d-flex justify-content-center pb-5">
             {errorFullname && (
               <span className="text-danger">
@@ -173,54 +180,65 @@ function SignUp(props) {
               </span>
             )}
           </div>
-          <div className="wrap-input100 validate-input">
+          <div className=" validate-input inputbox">
             <input
               className="input100"
               value={fullname}
               onChange={onChangeName}
               type="text"
-              placeholder="Tên đầy đủ"
             />
+            <label for="" className="text-white ">
+              Tên đầy đủ
+            </label>
           </div>
 
-          <div className="wrap-input100 rs1 validate-input">
+          <div className="inputbox rs1 validate-input">
             <input
               className="input100"
               value={email}
               onChange={onChangeEmail}
               type="text"
-              placeholder="Email"
             />
+            <label for="" className="text-white ">
+              Email <FontAwesomeIcon icon={faEnvelope} />
+            </label>
           </div>
 
-          <div className="wrap-input100 rs1 validate-input">
+          <div className="inputbox rs1 validate-input">
             <input
               className="input100"
               value={password}
               onChange={onChangePassword}
               type="password"
-              placeholder="Mật khẩu"
             />
+            <label for="" className="text-white ">
+              Mật khẩu <FontAwesomeIcon icon={faLock} />
+            </label>
           </div>
 
-          <div className="wrap-input100 rs1 validate-input">
+          <div className="inputbox rs1 validate-input">
             <input
               className="input100"
               value={phone}
               onChange={onChangePhone}
               type="text"
-              placeholder="Số điện thoại"
             />
+            <label for="" className="text-white ">
+              Số điện thoại <FontAwesomeIcon icon={faPhone} />
+            </label>
           </div>
 
           <div className="container-login100-form-btn m-t-20">
-            <button className="login100-form-btn" onClick={handlerSignUp}>
+            <button
+              className="login100-form-btn text-info"
+              onClick={handlerSignUp}
+            >
               Đăng ký
             </button>
           </div>
 
           <div className="text-center p-t-45 p-b-4">
-            <span className="txt1">Đăng nhập?</span>
+            <span className="text-light font-weight-bold ">Đăng nhập?</span>
             &nbsp;
             <Link to="/signin" className="txt2 hov1">
               Click

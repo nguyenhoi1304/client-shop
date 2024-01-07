@@ -2363,7 +2363,6 @@ a {
   text-decoration: none;
 }
 
-a:hover,
 a:focus {
   color: #b68b23;
   text-decoration: underline;

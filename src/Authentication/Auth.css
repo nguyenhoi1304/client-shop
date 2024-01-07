@@ -54,10 +54,6 @@ li {
 }
 
 /*---------------------------------------------*/
-input {
-  outline: none;
-  border: none;
-}
 
 textarea {
   outline: none;
@@ -65,10 +61,6 @@ textarea {
 }
 
 textarea:focus,
-input:focus {
-  border-color: transparent !important;
-}
-
 input::-webkit-input-placeholder {
   color: #666666;
 }
@@ -110,6 +102,11 @@ iframe {
   border: none !important;
 }
 
+input {
+  outline: none !important;
+  border: none;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {
@@ -133,7 +130,15 @@ iframe {
 
 .limiter {
   width: 100%;
-  margin: 0 auto;
+  float: right;
+  background-image: url(../Share/img/background_cake.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  object-fit: contain;
 }
 
 .container-login100 {
@@ -148,15 +153,14 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background-image: url(../Share/img/banner1.jpg);
 }
 
 .wrap-login100 {
+  backdrop-filter: blur(10px);
   width: 500px;
-  background: #fff;
+  border: 1px solid white;
   border-radius: 10px;
   overflow: hidden;
-
   box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
@@ -205,7 +209,7 @@ iframe {
 /*---------------------------------------------*/
 input.input100 {
   height: 68px;
-  padding: 0 25px 0 25px;
+  padding: 0 5px 0 5px;
 }
 
 /*------------------------------------------------------------------
@@ -325,7 +329,8 @@ input.input100 {
   padding: 0 20px;
   width: 100%;
   height: 60px;
-  background-color: #494949;
+  background-color: #fff;
+  border-radius: 10px;
 
   font-size: 14px;
   color: #fff;
@@ -339,7 +344,7 @@ input.input100 {
 }
 
 .login100-form-btn:hover {
-  background-color: #292929;
+  opacity: 0.8;
 }
 
 /*------------------------------------------------------------------
@@ -7159,4 +7164,32 @@ input.input100 {
 }
 .text_login:hover {
   color: #f1b50f;
+}
+.inputbox {
+  position: relative;
+  margin: 30px 0;
+  color: #000;
+  border-bottom: 2px solid #fff;
+}
+.inputbox label {
+  position: absolute;
+  top: 11%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.inputbox input:focus ~ label,
+.inputbox input:focus ~ label {
+  top: -15px;
+}
+
+.inputbox input {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  font-size: 1em;
 }

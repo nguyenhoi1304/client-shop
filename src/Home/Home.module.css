@@ -44,6 +44,7 @@
   background-color: #cccccc71;
 }
 .text_title {
+  position: relative;
   color: rgba(255, 255, 255, 0.795);
   text-transform: uppercase;
   font-size: 1.8rem;
@@ -101,50 +102,46 @@
   box-shadow: 7px 12px 9px #ccc;
 }
 
-.title {
-  position: relative;
-  display: inline-block;
-}
-.love {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #ec71c3;
-  border-radius: 10px;
-  padding: 5px 10px;
-}
-
+.love,
 .bestseller {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #50b9b9;
   border-radius: 10px;
-  padding: 20px 10px;
+}
+.love {
+  background-color: #ec71c3;
+  padding: 5px 10px;
 }
 
-.jump:nth-child(4) {
+.bestseller {
+  background-color: #50b9b9;
+  padding: 25px 10px;
+}
+.title {
+  position: relative;
+  display: flex;
+}
+
+.title .text_title .jump1 {
   position: absolute;
   font-weight: 800;
-  right: -12%;
-  top: -4%;
+  right: -8%;
   color: red;
   animation: jump 1.6s infinite;
 }
 
-.title .jump:nth-child(3) {
+.title .text_title .jump2 {
   position: absolute;
   font-weight: 800;
-  right: -9%;
-  top: -4%;
+  right: -15%;
   color: red;
   animation: jump 1.3s infinite;
 }
-.jump:nth-child(2) {
+.title .text_title .jump3 {
   position: absolute;
   font-weight: 800;
-  right: -5%;
-  top: -4%;
+  right: -20%;
   color: red;
   animation: jump 1s infinite;
 }
@@ -162,6 +159,7 @@
 
 .clock {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 20px 3%;
   color: #fff;

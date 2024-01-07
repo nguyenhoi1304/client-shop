@@ -230,6 +230,7 @@ function Detail(props) {
     alertify.set("notifier", "position", "bottom-left");
     alertify.success("Bạn Đã Thêm Hàng Thành Công!");
   };
+  console.log();
 
   return (
     <section className="py-5">

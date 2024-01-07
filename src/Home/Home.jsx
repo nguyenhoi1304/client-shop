@@ -109,6 +109,7 @@ function Home(props) {
     <>
       <div className="page-holder">
         <header className="header bg-white">
+          {/* Hiển thị phần modal chứa thông tin sản phẩm */}
           {products &&
             products.map((value) => (
               <div
@@ -186,19 +187,19 @@ function Home(props) {
           <div className="container">
             <section className="mt-5">
               <div
-                id="carouselExampleInterval"
-                className="carousel slide"
-                data-bs-ride="carousel"
+                id="carouselExampleControls"
+                class="carousel slide"
+                data-ride="carousel"
               >
-                <div className="carousel-inner">
-                  <div className="carousel-item active" data-bs-interval="5000">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
                     <img
                       src={Image.banner1}
                       className={styles.img_banner}
                       alt="..."
                     />
                   </div>
-                  <div className="carousel-item">
+                  <div class="carousel-item">
                     <img
                       src={Image.banner2}
                       className={styles.img_banner}
@@ -227,32 +228,30 @@ function Home(props) {
                     />
                   </div>
                 </div>
-                <button
-                  className="carousel-control-prev "
-                  type="button"
-                  data-bs-target="#carouselExampleInterval"
-                  data-bs-slide="prev"
+                <a
+                  class="carousel-control-prev"
+                  href="#carouselExampleControls"
+                  role="button"
+                  data-slide="prev"
                 >
-                  <span className={styles.btn_move}>
-                    <i
-                      className="carousel-control-prev-icon  "
-                      aria-hidden="true"
-                    ></i>
-                  </span>
-                </button>
-                <button
-                  className="carousel-control-next"
-                  type="button"
-                  data-bs-target="#carouselExampleInterval"
-                  data-bs-slide="next"
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a
+                  class="carousel-control-next"
+                  href="#carouselExampleControls"
+                  role="button"
+                  data-slide="next"
                 >
-                  <span className={styles.btn_move}>
-                    <i
-                      className="carousel-control-next-icon  "
-                      aria-hidden="true"
-                    ></i>
-                  </span>
-                </button>
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
             </section>
 
@@ -340,26 +339,27 @@ function Home(props) {
 
             {/* mùa yêu, deal ngọt */}
             <section className="pt-5">
-              <header className={styles.love}>
-                <div className={styles.title}>
-                  <span className={styles.text_title}>
-                    <i
-                      className="fas fa-heart mr-2"
-                      style={{ color: "red" }}
-                    ></i>
-                    mùa yêu, deal ngọt
-                  </span>
-                  <span className={styles.jump}>H</span>
-                  <span className={styles.jump}>O</span>
-                  <span className={styles.jump}>T</span>
-                </div>
-
-                <Clock
-                  timerHours={timerHours}
-                  timerMinutes={timerMinutes}
-                  timerSeconds={timerSeconds}
-                />
-              </header>
+              <div className="col-xl-12 col-lg-12 col-sm-12 p-0">
+                <header className={styles.love}>
+                  <div className={styles.title}>
+                    <span className={styles.text_title}>
+                      <i
+                        className="fas fa-heart mr-2"
+                        style={{ color: "red" }}
+                      ></i>
+                      mùa yêu, deal ngọt
+                      <span className={styles.jump1}>H</span>
+                      <span className={styles.jump2}>O</span>
+                      <span className={styles.jump3}>T</span>
+                    </span>
+                  </div>
+                  <Clock
+                    timerHours={timerHours}
+                    timerMinutes={timerMinutes}
+                    timerSeconds={timerSeconds}
+                  />
+                </header>
+              </div>
               {loading ? (
                 <div class="spinner-border text-info" role="status">
                   <span class="visually-hidden">
@@ -415,7 +415,6 @@ function Home(props) {
                 </>
               )}
             </section>
-
             {/* Sản phẩm bán chạy */}
             <section className="py-5" id="section_product">
               <header className={styles.bestseller}>
@@ -423,10 +422,10 @@ function Home(props) {
                   <span className={styles.text_title}>
                     <i className="fas fa-truck mr-2" />
                     sản phẩm bán chạy
+                    <span className={styles.jump1}>H</span>
+                    <span className={styles.jump2}>O</span>
+                    <span className={styles.jump3}>T</span>
                   </span>
-                  <span className={styles.jump}>H</span>
-                  <span className={styles.jump}>O</span>
-                  <span className={styles.jump}>T</span>
                 </div>
               </header>
               {loading ? (
@@ -551,7 +550,9 @@ function Home(props) {
               <div className="container p-0">
                 <div className="row">
                   <div className="col-lg-6 mb-3 mb-lg-0">
-                    <h5 className="text-uppercase">Chia sẽ với bạn bè!</h5>
+                    <h5 className="text-capitalize">
+                      Đăng ký email của bạn để nhận nhiều ưu đãi!
+                    </h5>
                   </div>
                   <div className="col-lg-6">
                     <form action="#">

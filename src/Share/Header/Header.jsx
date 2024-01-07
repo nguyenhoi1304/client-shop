@@ -191,7 +191,7 @@ function Header(props) {
 
             {/* list item right */}
             <ul className="navbar-nav d-flex align-items-center">
-              <li className="nav-item px-1">
+              <li className="nav-item px-1 d-flex">
                 <input
                   type="search"
                   placeholder="Bạn cần tìm gì?..."

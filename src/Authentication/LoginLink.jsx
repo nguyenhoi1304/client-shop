@@ -15,7 +15,7 @@ function LoginLink(props) {
 
   return (
     <li className="nav-item " onClick={onRedirect}>
-      <Link className="nav-link" to="/signin">
+      <Link className="nav-link text-secondary text-uppercase" to="/signin">
         ( Đăng xuất )
       </Link>
     </li>

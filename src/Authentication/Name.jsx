@@ -18,7 +18,7 @@ function Name(props) {
   return (
     <li className="nav-item dropdown">
       <p
-        className="nav-link dropdown-toggle"
+        className="nav-link dropdown-toggle text-white"
         style={{ cursor: "pointer" }}
         id="pagesDropdown"
         data-toggle="dropdown"
