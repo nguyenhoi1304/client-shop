@@ -5,12 +5,7 @@ import "./Auth.css";
 import queryString from "query-string";
 import MessengerAPI from "../API/MessengerAPI";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faLock,
-  faPhone,
-  faVoicemail,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faLock, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 SignUp.propTypes = {};
 
