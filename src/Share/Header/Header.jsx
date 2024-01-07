@@ -20,7 +20,6 @@ function Header(props) {
     promotion: "Khuyến mãi",
     formula: "Công thức làm bánh",
     contact: "Liên hệ",
-    book: "Đặt nhanh",
   };
 
   const listMenuItemRight = {
@@ -158,19 +157,7 @@ function Header(props) {
                   </span>
                 </Link>
               </li>
-              <li className="nav-item" onClick={() => handleActive("book")}>
-                <Link className="nav-link " to={`/`}>
-                  <span
-                    className={
-                      valueActive === "book"
-                        ? styles.active
-                        : styles.none_active
-                    }
-                  >
-                    {listMenuItemLeft.book}
-                  </span>
-                </Link>
-              </li>
+
               <li
                 className="nav-item"
                 onClick={() => handleActive("promotion")}

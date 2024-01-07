@@ -7,6 +7,7 @@ import styles from "./Home.module.css";
 import Clock from "./Clock";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Feedback from "../Feedback/Feedback";
 
 function Home(props) {
   const [products, setProducts] = useState([]);
@@ -546,6 +547,12 @@ function Home(props) {
                 </div>
               </div>
             </section>
+
+            {/* FeedBack */}
+            <section>
+              <Feedback />
+            </section>
+
             <section className="py-5">
               <div className="container p-0">
                 <div className="row">
