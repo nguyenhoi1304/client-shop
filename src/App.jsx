@@ -32,6 +32,7 @@ function App() {
           <Route path="/history" element={<MainHistory />} />
           <Route path="/history/:idHistory" element={<DetailHistory />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:valueSearchHome" element={<Shop />} />
         </Routes>
       </BrowserRouter>
 

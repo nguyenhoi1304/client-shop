@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 Search.propTypes = {
   handlerSearch: PropTypes.func,
@@ -11,6 +12,7 @@ Search.defaultProps = {
 
 function Search(props) {
   const { handlerSearch } = props;
+  const navigation = useNavigate();
 
   const [search, setSearch] = useState("");
 
@@ -31,8 +33,11 @@ function Search(props) {
 
       delaySearchTextTimeOut.current = setTimeout(() => {
         handlerSearch(value);
-      }, 500);
+      }, 1000);
     }
+
+    // xóa params tìm kiếm ở phần Header
+    navigation("/shop");
   };
 
   return (

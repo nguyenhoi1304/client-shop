@@ -8,11 +8,14 @@ import Products from "./Component/Products";
 import SortProduct from "./Component/SortProduct";
 import convertMoney from "../convertMoney";
 import ImgIcon from "../Share/img/index";
+import { useParams } from "react-router-dom";
 
 function Shop(props) {
   const [products, setProducts] = useState([]);
   const [temp, setTemp] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  let { valueSearchHome } = useParams();
 
   //state dùng để sắp xếp sản phẩm
   const [sort, setSort] = useState("default");
@@ -27,7 +30,7 @@ function Shop(props) {
   //Từng trang hiện tại
   const [pagination, setPagination] = useState({
     page: "1",
-    count: "9",
+    count: "6",
     search: "",
     category: category,
   });
@@ -35,7 +38,6 @@ function Shop(props) {
   //Hàm nà dùng để lấy value từ component SortProduct truyền lên
   const handlerChangeSort = (value) => {
     console.log("Value: ", value);
-
     setSort(value);
   };
 
@@ -53,6 +55,7 @@ function Shop(props) {
 
   //Hàm này dùng để thay đổi state pagination.search
   //Hàm này sẽ truyền xuống Component con và nhận dữ liệu từ Component con truyền lên
+
   const handlerSearch = (value) => {
     console.log("Value: ", value);
 
@@ -123,7 +126,7 @@ function Shop(props) {
       const params = {
         page: pagination.page,
         count: pagination.count,
-        search: pagination.search,
+        search: valueSearchHome ? valueSearchHome : pagination.search,
         category: pagination.category,
       };
 
@@ -133,13 +136,14 @@ function Shop(props) {
 
       const data = await ProductAPI.getPagination(newQuery);
       const response = data;
+
       setProducts(response);
       setTemp(response);
       setLoading(false);
     };
 
     fetchData();
-  }, [pagination]);
+  }, [pagination, valueSearchHome]);
 
   return (
     <div className="container">
@@ -249,7 +253,7 @@ function Shop(props) {
       <section className="py-5">
         <div className="container p-0">
           <div className="row">
-            <div className="col-lg-3 order-2 order-lg-1 ">
+            <div className="col-lg-3   order-2 order-lg-1 ">
               <div className="text-uppercase mb-4 header_category rounded ">
                 Danh mục sản phẩm
               </div>
@@ -422,7 +426,7 @@ function Shop(props) {
                 </li>
               </ul>
             </div>
-            <div className="col-lg-9 order-1 order-lg-2 mb-5 mb-lg-0 px-5">
+            <div className="col-lg-9  order-1 order-lg-2 mb-5 mb-lg-0 px-5">
               <div className="row mb-3 align-items-center">
                 {/* ------------------Search----------------- */}
                 <Search handlerSearch={handlerSearch} />

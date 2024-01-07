@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../../Redux/Action/ActionCart";
 import { addSession } from "../../Redux/Action/ActionSession";
 import logo from "../img/cakes-shop-logo.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginLink from "../../Authentication/LoginLink";
 import LogoutLink from "../../Authentication/LogoutLink";
 import Name from "../../Authentication/Name";
@@ -12,6 +12,8 @@ import styles from "./Header.module.css";
 function Header(props) {
   const dispatch = useDispatch();
   const [valueActive, setValueActive] = useState("home");
+  const [valueSearch, setValueSearch] = useState("");
+  const navigation = useNavigate();
 
   const listMenuItemLeft = {
     home: "Trang chủ",
@@ -60,6 +62,12 @@ function Header(props) {
 
   const handleActive = (value) => {
     setValueActive(value);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigation(`/shop/${valueSearch}`);
+    setValueSearch("");
   };
 
   return (
@@ -178,18 +186,22 @@ function Header(props) {
 
             {/* list item right */}
             <ul className="navbar-nav d-flex align-items-center">
-              <li className="nav-item px-1 d-flex">
-                <input
-                  type="search"
-                  placeholder="Bạn cần tìm gì?..."
-                  className={styles.search_input}
-                />
-                <span>
-                  <button className={styles.btn_search}>
-                    <i className="fas fa-search mr-1 text-white" />
-                    Tìm Kiếm
-                  </button>
-                </span>
+              <li className="nav-item px-1 ">
+                <form onSubmit={handleSearch} className="d-flex">
+                  <input
+                    type="text"
+                    placeholder="Bạn cần tìm gì?..."
+                    className={styles.search_input}
+                    value={valueSearch}
+                    onChange={(e) => setValueSearch(e.target.value)}
+                  />
+                  <span>
+                    <button className={styles.btn_search} type="submit">
+                      <i className="fas fa-search mr-1 text-white" />
+                      Tìm Kiếm
+                    </button>
+                  </span>
+                </form>
               </li>
               <li
                 className="nav-item px-1"
