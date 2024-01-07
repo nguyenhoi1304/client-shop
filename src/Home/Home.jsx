@@ -160,7 +160,7 @@ function Home(props) {
                               {convertMoney(value.price)} VND
                             </b>
                             <br></br>
-                            <p className="text-small mb-4">
+                            <p className="text-small mb-4 mt-3">
                               {value.short_desc}
                             </p>
                             <div className="row align-items-stretch mb-4">

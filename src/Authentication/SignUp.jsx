@@ -14,10 +14,12 @@ function SignUp(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const [errorEmail, setEmailError] = useState(false);
   const [emailRegex, setEmailRegex] = useState(false);
   const [errorPassword, setPasswordError] = useState(false);
+  const [errorConfirmPassword, setConfirmPasswordError] = useState(false);
   const [errorFullname, setFullnameError] = useState(false);
   const [errorPhone, setPhoneError] = useState(false);
 
@@ -36,19 +38,32 @@ function SignUp(props) {
     setPassword(e.target.value);
   };
 
+  const onChangeConfirmPassword = (e) => {
+    setConfirmPassword(e.target.value);
+  };
+
   const onChangePhone = (e) => {
     setPhone(e.target.value);
   };
 
   const handlerSignUp = (e) => {
     e.preventDefault();
-
-    if (!fullname) {
+    if (password !== confirmPassword) {
+      setFullnameError(false);
+      setEmailError(false);
+      setPhoneError(false);
+      setPasswordError(false);
+      setConfirmPasswordError(true);
+      setEmailRegex(false);
+      return;
+    } else if (!fullname) {
       setFullnameError(true);
       setEmailError(false);
       setPhoneError(false);
       setPasswordError(false);
       setEmailRegex(false);
+      setConfirmPasswordError(false);
+
       return;
     } else {
       setFullnameError(false);
@@ -56,18 +71,22 @@ function SignUp(props) {
       setPasswordError(false);
       setFullnameError(false);
       setEmailRegex(false);
+      setConfirmPasswordError(false);
 
       if (!email) {
         setFullnameError(false);
         setEmailError(true);
         setPhoneError(false);
         setPasswordError(false);
+        setConfirmPasswordError(false);
+
         return;
       } else {
         setEmailError(false);
         setPhoneError(false);
         setPasswordError(false);
         setFullnameError(false);
+        setConfirmPasswordError(false);
 
         if (!validateEmail(email)) {
           setEmailRegex(true);
@@ -75,15 +94,18 @@ function SignUp(props) {
           setEmailError(false);
           setPhoneError(false);
           setPasswordError(false);
+          setConfirmPasswordError(false);
+
           return;
         } else {
           setEmailRegex(false);
-
           if (!password) {
             setFullnameError(false);
             setEmailError(false);
             setPhoneError(false);
             setPasswordError(true);
+            setConfirmPasswordError(false);
+
             return;
           } else {
             setFullnameError(false);
@@ -91,12 +113,14 @@ function SignUp(props) {
             setPasswordError(false);
             setFullnameError(false);
             setEmailRegex(false);
+            setConfirmPasswordError(false);
 
             if (!phone) {
               setFullnameError(false);
               setEmailError(false);
               setPhoneError(true);
               setPasswordError(false);
+              setConfirmPasswordError(false);
             } else {
               const fetchSignUp = async () => {
                 const body = JSON.stringify({
@@ -153,11 +177,13 @@ function SignUp(props) {
           <div className="d-flex justify-content-center pb-5">
             {errorFullname && (
               <span className="text-danger">
-                * Vui lòng kiểm tra full name!
+                * Tên đầy đủ không được để trống!
               </span>
             )}
             {errorEmail && (
-              <span className="text-danger">* Vui lòng kiểm tra Email!</span>
+              <span className="text-danger">
+                * Vui lòng kiểm tra Email, Email không được để trống!
+              </span>
             )}
             {emailRegex && (
               <span className="text-danger">
@@ -167,6 +193,11 @@ function SignUp(props) {
             {errorPassword && (
               <span className="text-danger">
                 *Vui lòng kiểm tra lại password!
+              </span>
+            )}
+            {errorConfirmPassword && (
+              <span className="text-danger">
+                * Mật khẩu xác nhận không trùng khớp với mật khẩu!
               </span>
             )}
             {errorPhone && (
@@ -192,7 +223,7 @@ function SignUp(props) {
               className="input100"
               value={email}
               onChange={onChangeEmail}
-              type="text"
+              type="email"
             />
             <label for="" className="text-white ">
               Email <FontAwesomeIcon icon={faEnvelope} />
@@ -205,6 +236,7 @@ function SignUp(props) {
               value={password}
               onChange={onChangePassword}
               type="password"
+              required
             />
             <label for="" className="text-white ">
               Mật khẩu <FontAwesomeIcon icon={faLock} />
@@ -214,9 +246,22 @@ function SignUp(props) {
           <div className="inputbox rs1 validate-input">
             <input
               className="input100"
+              value={confirmPassword}
+              onChange={onChangeConfirmPassword}
+              type="password"
+              required
+            />
+            <label for="" className="text-white ">
+              Nhập lại mật khẩu <FontAwesomeIcon icon={faLock} />
+            </label>
+          </div>
+
+          <div className="inputbox rs1 validate-input">
+            <input
+              className="input100"
               value={phone}
               onChange={onChangePhone}
-              type="text"
+              type="number"
             />
             <label for="" className="text-white ">
               Số điện thoại <FontAwesomeIcon icon={faPhone} />
