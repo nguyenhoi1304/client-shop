@@ -18,7 +18,6 @@ import {
   faHandHoldingHeart,
   faRepeat,
   faNewspaper,
-  faReceipt,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NewsApi from "../API/NewsApi";
@@ -406,11 +405,12 @@ function Home(props) {
                         draggable={false}
                         showDots={true}
                         responsive={responsive}
+                        autoPlaySpeed={3000}
+                        autoPlay={props.deviceType !== "mobile" ? true : false}
                         ssr={true} // means to render carousel on server-side.
                         infinite={true} // cuộn đến hết item thì thôi
                         keyBoardControl={true}
                         transitionDuration={500}
-                        rtl={true}
                         containerClass="carousel-container"
                         removeArrowOnDeviceType={["tablet", "mobile"]}
                         deviceType={props.deviceType}
