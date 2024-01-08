@@ -47,27 +47,30 @@ function Home(props) {
   ];
 
   let interval;
-  const startTimer = () => {
-    const daysInit = new Date().getDay() + 1;
-    const monthInit = month[new Date().getMonth()];
-    const yearInit = new Date().getFullYear();
 
+  // thời gian kết thúc trong 1 ngày đếm ngược
+  const daysInit = new Date().getDate() + 1;
+  const monthInit = month[new Date().getMonth()];
+  const yearInit = new Date().getFullYear();
+
+  const startTimer = () => {
     const countDownDate = new Date(
-      `${daysInit} ${monthInit},${yearInit}`
+      `${monthInit} ${daysInit},${yearInit}`
     ).getTime();
-    console.log(daysInit);
+
     interval = setInterval(() => {
       const now = new Date().getTime();
-
       const distance = countDownDate - now;
 
       // xử lý hiển thị 1 => 01
       const hours = `0${Math.floor(
         (distance % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60)
       )}`.slice(-2);
+
       const minutes = `0${Math.floor(
         (distance % (60 * 60 * 1000)) / (1000 * 60)
       )}`.slice(-2);
+
       const seconds = `0${Math.floor((distance % (60 * 1000)) / 1000)}`.slice(
         -2
       );
@@ -134,7 +137,6 @@ function Home(props) {
     },
   };
 
-  console.log(news);
   return (
     <>
       <div className="page-holder">

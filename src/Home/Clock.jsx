@@ -16,6 +16,7 @@ Clock.defaultProps = {
 };
 function Clock(props) {
   const { timerHours, timerMinutes, timerSeconds } = props;
+  console.log(timerHours, timerMinutes, timerSeconds);
   return (
     <>
       <div className={styles.clock}>
