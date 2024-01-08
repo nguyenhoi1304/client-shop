@@ -107,7 +107,8 @@ function Home(props) {
     const fetchDataNews = async () => {
       setLoading(true);
       const data = await NewsApi.getNews();
-      setNews(data);
+      const result = data.slice(0, 8);
+      setNews(result);
       setLoading(false);
     };
     fetchDataNews();
@@ -449,54 +450,50 @@ function Home(props) {
             </section>
 
             {/* Hot Banner */}
-            <section className="bg-light mt-4">
-              <div className="container">
-                {/* row 1 */}
-                <div className="row">
-                  <div className="col-md-12 px-0">
-                    <img className="w-100 pb-4" src={bannerHot} alt="banner" />
+            <section className="bg-light mt-4 mx-0">
+              {/* row 1 */}
+              <div className="row m-0">
+                <div className="col-md-12 px-0">
+                  <img className="w-100 pb-4" src={bannerHot} alt="banner" />
+                </div>
+              </div>
+              {/* row 2 */}
+              <div className="row text-center pb-3">
+                {/* col 1 */}
+                <div className="col-lg-4 mb-3 mb-lg-0 p-0">
+                  <div className="media align-items-end">
+                    <div className="media-body text-left d-flex align-items-center pl-2">
+                      <FontAwesomeIcon
+                        className={styles.icon_hotbanner}
+                        icon={faTruckFast}
+                      />
+                      <b className="text-uppercase ml-2">Giao hàng đúng giờ</b>
+                    </div>
                   </div>
                 </div>
-                {/* row 2 */}
-                <div className="row text-center pb-3">
-                  {/* col 1 */}
-                  <div className="col-lg-4 mb-3 mb-lg-0 p-0">
-                    <div className="media align-items-end">
-                      <div className="media-body text-left  d-flex align-items-center">
-                        <FontAwesomeIcon
-                          className={styles.icon_hotbanner}
-                          icon={faTruckFast}
-                        />
-                        <b className="text-uppercase ml-2">
-                          Giao hàng đúng giờ
-                        </b>
-                      </div>
+                {/* col 2 */}
+                <div className="col-lg-4 mb-3 mb-lg-0 p-0">
+                  <div className="media align-items-end">
+                    <div className="media-body text-left pb-2 d-flex align-items-center">
+                      <FontAwesomeIcon
+                        className={styles.icon_hotbanner}
+                        icon={faHandHoldingHeart}
+                      />
+                      <b className="text-uppercase ml-2">Ưu đãi mỗi ngày</b>
                     </div>
                   </div>
-                  {/* col 2 */}
-                  <div className="col-lg-4 mb-3 mb-lg-0 p-0">
-                    <div className="media align-items-end">
-                      <div className="media-body text-left pb-2 d-flex align-items-center">
-                        <FontAwesomeIcon
-                          className={styles.icon_hotbanner}
-                          icon={faHandHoldingHeart}
-                        />
-                        <b className="text-uppercase ml-2">Ưu đãi mỗi ngày</b>
-                      </div>
-                    </div>
-                  </div>
-                  {/* col 3 */}
-                  <div className="col-lg-4 mb-3 mb-lg-0 p-0">
-                    <div className="media align-items-end">
-                      <div className="media-body text-left  d-flex align-items-center">
-                        <FontAwesomeIcon
-                          className={styles.icon_hotbanner}
-                          icon={faRepeat}
-                        />
-                        <b className="text-uppercase ml-2">
-                          Đổi trả trong vòng 7 ngày
-                        </b>
-                      </div>
+                </div>
+                {/* col 3 */}
+                <div className="col-lg-4 mb-3 mb-lg-0 p-0">
+                  <div className="media align-items-end">
+                    <div className="media-body text-left  d-flex align-items-center">
+                      <FontAwesomeIcon
+                        className={styles.icon_hotbanner}
+                        icon={faRepeat}
+                      />
+                      <b className="text-uppercase ml-2">
+                        Đổi trả trong vòng 7 ngày
+                      </b>
                     </div>
                   </div>
                 </div>
@@ -523,11 +520,11 @@ function Home(props) {
                   </span>
                 </div>
               ) : (
-                <div className="row">
+                <div className="row mx-0">
                   {products &&
                     products.map((value) => (
                       <div
-                        className="col-xl-3 col-lg-4 col-sm-6"
+                        className="col-xl-3 col-lg-4 col-sm-6 px-0"
                         key={value._id}
                       >
                         <div className="product text-center">
@@ -581,26 +578,43 @@ function Home(props) {
             </section>
 
             <section className="d-flex align-items-center justify-content-center">
-              <button className={styles.btn_all}>
-                xem tất cả
-                <FontAwesomeIcon
-                  className={styles.iconRight}
-                  icon={faChevronRight}
-                />{" "}
-              </button>
+              <Link to="/shop">
+                <button className={styles.btn_all}>
+                  xem tất cả
+                  <FontAwesomeIcon
+                    className={styles.iconRight}
+                    icon={faChevronRight}
+                  />
+                </button>
+              </Link>
             </section>
+
             {/*  banner deal sock*/}
-            <section className="row mt-4">
-              <div className="col-md-4">
-                <img className="w-100" src={banner_coll_1_1} alt="banner_hot" />
-              </div>
-              <div className="col-md-4">
-                <img className="w-100" src={banner_coll_1_2} alt="banner_hot" />
-              </div>
-              <div className="col-md-4">
-                <img className="w-100" src={banner_coll_1_3} alt="banner_hot" />
-              </div>
-            </section>
+            <div className="container">
+              <section className="row mt-4">
+                <div className="col-md-4 px-0">
+                  <img
+                    className="w-100 h-40 pr-2 rounded"
+                    src={banner_coll_1_1}
+                    alt="banner_hot"
+                  />
+                </div>
+                <div className="col-md-4 px-1 px-0">
+                  <img
+                    className="w-100 h-40  rounded"
+                    src={banner_coll_1_2}
+                    alt="banner_hot"
+                  />
+                </div>
+                <div className="col-md-4 px-0">
+                  <img
+                    className="w-100 h-40 pl-2 rounded"
+                    src={banner_coll_1_3}
+                    alt="banner_hot"
+                  />
+                </div>
+              </section>
+            </div>
 
             {/* NEWS*/}
             {loading ? (
@@ -611,53 +625,40 @@ function Home(props) {
               </div>
             ) : (
               <section>
-                <div className="row mt-4">
-                  {/* col-1 */}
-                  <div className="col-md-6">
-                    <h5 className="text-uppercase bg-success text-white mb-4 py-2 rounded ">
+                <div className="row mt-4 mx-0">
+                  <div className={styles.title_about_cake}>
+                    <p className={styles.text_title}>
                       <FontAwesomeIcon
                         className="mr-2 text-white ml-2"
                         icon={faNewspaper}
                       />
-                      tin tức
-                    </h5>
+                      tin tức về bánh
+                    </p>
+                  </div>
+                  <div className="row px-0">
                     {news?.map((item) => (
-                      <div className="d-flex ">
-                        <img
-                          className={styles.imgNews}
-                          src={item.image}
-                          alt=""
-                        />
-                        <div>
-                          <h5 className="mb-2">{item.title}</h5>
-                          <a
-                            href="/home"
-                            alt=""
-                            className={styles.news_description}
-                          >
-                            {item.description}
-                          </a>
+                      <div className="col-md-6">
+                        <div className="row px-0  mt-4">
+                          <div className="col-md-6 d-flex">
+                            <img
+                              className={styles.imgNews}
+                              src={item.image}
+                              alt=""
+                            />
+                          </div>
+                          <div className="col-md-6 w-100">
+                            <h5 className="mb-2">{item.title}</h5>
+                            <a
+                              href="/home"
+                              alt=""
+                              className={styles.news_description}
+                            >
+                              {item.description}
+                            </a>
+                          </div>
                         </div>
                       </div>
                     ))}
-                  </div>
-                  <div className="col-md-6">
-                    <h5 className="text-uppercase bg-success text-white mb-4 py-2 rounded">
-                      <FontAwesomeIcon
-                        className="mr-2 text-white ml-2"
-                        icon={faReceipt}
-                      />
-                      công thức làm bánh
-                    </h5>
-                    <div className="d-flex ">
-                      <img src="" alt="" />
-                      <div>
-                        <p>title</p>
-                        <a href="/home" alt="">
-                          description
-                        </a>
-                      </div>
-                    </div>
                   </div>
                 </div>
               </section>
@@ -669,34 +670,32 @@ function Home(props) {
             </section>
 
             <section className="py-5">
-              <div className="container p-0">
-                <div className="row d-flex align-items-center">
-                  <div className="col-lg-6 mb-3 mb-lg-0">
-                    <h5 className="text-capitalize">
-                      Đăng ký email của bạn để nhận nhiều ưu đãi!
-                    </h5>
-                  </div>
-                  <div className="col-lg-6">
-                    <form action="#">
-                      <div className="input-group flex-column flex-sm-row mb-3">
-                        <input
-                          className="form-control form-control-lg py-3"
-                          type="email"
-                          placeholder="Enter your email address"
-                          aria-describedby="button-addon2"
-                        />
-                        <div className="input-group-append">
-                          <button
-                            className="btn btn-dark btn-block"
-                            id="button-addon2"
-                            type="submit"
-                          >
-                            Đăng ký
-                          </button>
-                        </div>
+              <div className="row d-flex align-items-center">
+                <div className="col-lg-6 mb-3 mb-lg-0">
+                  <h5 className="text-inherit">
+                    Đăng ký email của bạn để nhận nhiều ưu đãi!
+                  </h5>
+                </div>
+                <div className="col-lg-6">
+                  <form action="#">
+                    <div className="input-group flex-column flex-sm-row mb-3 ">
+                      <input
+                        className="form-control form-control-lg py-3 rounded-left "
+                        type="email"
+                        placeholder="Nhập email"
+                        aria-describedby="button-addon2"
+                      />
+                      <div className="input-group-append">
+                        <button
+                          className="btn btn-success btn-block rounded-right"
+                          id="button-addon2"
+                          type="submit"
+                        >
+                          Đăng ký
+                        </button>
                       </div>
-                    </form>
-                  </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </section>

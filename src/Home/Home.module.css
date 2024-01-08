@@ -30,7 +30,7 @@
   color: white;
 }
 .btn_all {
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: var(--background-main-color);
   font-weight: bold;
   padding: 10px 28px;
@@ -47,7 +47,6 @@
 .btn_all .iconRight {
   font-size: 12px;
   margin-left: 7px;
-  padding-bottom: 2px;
 }
 
 .btn_coppy:hover {
@@ -214,8 +213,8 @@
 }
 
 .imgNews {
-  width: 200px;
-  height: 150px;
+  width: 100%;
+  height: 200px;
   margin-right: 20px;
 }
 
@@ -225,4 +224,10 @@
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+}
+
+.title_about_cake {
+  background-color: var(--background-main-color);
+  width: 100%;
+  padding: 10px 0;
 }
