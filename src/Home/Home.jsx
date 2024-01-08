@@ -8,9 +8,24 @@ import Clock from "./Clock";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Feedback from "../Feedback/Feedback";
+import banner_coll_1_1 from "../Share/img/banner_coll_1_1.jpg";
+import banner_coll_1_2 from "../Share/img/banner_coll_1_2.jpg";
+import banner_coll_1_3 from "../Share/img/banner_coll_1_3.jpg";
+import bannerHot from "../Share/img/section_hot_banner.jpg";
+import {
+  faChevronRight,
+  faTruckFast,
+  faHandHoldingHeart,
+  faRepeat,
+  faNewspaper,
+  faReceipt,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import NewsApi from "../API/NewsApi";
 
 function Home(props) {
   const [products, setProducts] = useState([]);
+  const [news, setNews] = useState([]);
   const [productsLove, setProductsLove] = useState();
   const [loading, setLoading] = useState(false);
   const [timerHours, setTimerHours] = useState();
@@ -31,12 +46,13 @@ function Home(props) {
     "November",
     "December",
   ];
-  let interval;
-  const daysInit = new Date().getDay() + 1;
-  const monthInit = month[new Date().getMonth()];
-  const yearInit = new Date().getFullYear();
 
+  let interval;
   const startTimer = () => {
+    const daysInit = new Date().getDay() + 1;
+    const monthInit = month[new Date().getMonth()];
+    const yearInit = new Date().getFullYear();
+
     const countDownDate = new Date(
       `${daysInit} ${monthInit},${yearInit}`
     ).getTime();
@@ -72,6 +88,7 @@ function Home(props) {
   useEffect(() => {
     startTimer();
   }, []);
+
   //Fetch Product
   useEffect(() => {
     const fetchData = async () => {
@@ -83,6 +100,17 @@ function Home(props) {
       setLoading(false);
     };
     fetchData();
+  }, []);
+
+  // getAPINEWS
+  useEffect(() => {
+    const fetchDataNews = async () => {
+      setLoading(true);
+      const data = await NewsApi.getNews();
+      setNews(data);
+      setLoading(false);
+    };
+    fetchDataNews();
   }, []);
 
   //react-multi-carousel
@@ -106,6 +134,7 @@ function Home(props) {
     },
   };
 
+  console.log(news);
   return (
     <>
       <div className="page-holder">
@@ -370,52 +399,110 @@ function Home(props) {
               ) : (
                 <>
                   <section className="mt-3">
-                    <Carousel
-                      swipeable={false}
-                      draggable={false}
-                      showDots={true}
-                      responsive={responsive}
-                      ssr={true} // means to render carousel on server-side.
-                      infinite={true} // cuộn đến hết item thì thôi
-                      keyBoardControl={true}
-                      transitionDuration={500}
-                      rtl={true}
-                      containerClass="carousel-container"
-                      removeArrowOnDeviceType={["tablet", "mobile"]}
-                      deviceType={props.deviceType}
-                      dotListClass="custom-dot-list-style"
-                      itemClass="carousel-item-padding-40-px"
-                      className={styles.card_love}
-                    >
-                      {productsLove?.map(
-                        (product) =>
-                          product.category === "chocolate" && (
-                            <div key={product._id} className={styles.card}>
-                              <a
-                                className="d-block"
-                                href={`#product_${product._id}`}
-                                data-toggle="modal"
-                              >
-                                <img
-                                  className={styles.img_love}
-                                  src={product.img1}
-                                  alt="product_image"
-                                />
-                                <p className={styles.description}>
-                                  {product.name}
-                                </p>
-                                <p className={styles.description}>
-                                  {convertMoney(product.price)} VND
-                                </p>
-                              </a>
-                            </div>
-                          )
-                      )}
-                    </Carousel>
+                    {productsLove && (
+                      <Carousel
+                        swipeable={false}
+                        draggable={false}
+                        showDots={true}
+                        responsive={responsive}
+                        ssr={true} // means to render carousel on server-side.
+                        infinite={true} // cuộn đến hết item thì thôi
+                        keyBoardControl={true}
+                        transitionDuration={500}
+                        rtl={true}
+                        containerClass="carousel-container"
+                        removeArrowOnDeviceType={["tablet", "mobile"]}
+                        deviceType={props.deviceType}
+                        dotListClass="custom-dot-list-style"
+                        itemClass="carousel-item-padding-40-px"
+                        className={styles.card_love}
+                      >
+                        {productsLove?.map(
+                          (product) =>
+                            product.category === "chocolate" && (
+                              <div key={product._id} className={styles.card}>
+                                <a
+                                  className="d-block"
+                                  href={`#product_${product._id}`}
+                                  data-toggle="modal"
+                                >
+                                  <img
+                                    className={styles.img_love}
+                                    src={product.img1}
+                                    alt="product_image"
+                                  />
+                                  <p className={styles.description}>
+                                    {product.name}
+                                  </p>
+                                  <p className={styles.description}>
+                                    {convertMoney(product.price)} VND
+                                  </p>
+                                </a>
+                              </div>
+                            )
+                        )}
+                      </Carousel>
+                    )}
                   </section>
                 </>
               )}
             </section>
+
+            {/* Hot Banner */}
+            <section className="bg-light mt-4">
+              <div className="container">
+                {/* row 1 */}
+                <div className="row">
+                  <div className="col-md-12 px-0">
+                    <img className="w-100 pb-4" src={bannerHot} alt="banner" />
+                  </div>
+                </div>
+                {/* row 2 */}
+                <div className="row text-center pb-3">
+                  {/* col 1 */}
+                  <div className="col-lg-4 mb-3 mb-lg-0 p-0">
+                    <div className="media align-items-end">
+                      <div className="media-body text-left  d-flex align-items-center">
+                        <FontAwesomeIcon
+                          className={styles.icon_hotbanner}
+                          icon={faTruckFast}
+                        />
+                        <b className="text-uppercase ml-2">
+                          Giao hàng đúng giờ
+                        </b>
+                      </div>
+                    </div>
+                  </div>
+                  {/* col 2 */}
+                  <div className="col-lg-4 mb-3 mb-lg-0 p-0">
+                    <div className="media align-items-end">
+                      <div className="media-body text-left pb-2 d-flex align-items-center">
+                        <FontAwesomeIcon
+                          className={styles.icon_hotbanner}
+                          icon={faHandHoldingHeart}
+                        />
+                        <b className="text-uppercase ml-2">Ưu đãi mỗi ngày</b>
+                      </div>
+                    </div>
+                  </div>
+                  {/* col 3 */}
+                  <div className="col-lg-4 mb-3 mb-lg-0 p-0">
+                    <div className="media align-items-end">
+                      <div className="media-body text-left  d-flex align-items-center">
+                        <FontAwesomeIcon
+                          className={styles.icon_hotbanner}
+                          icon={faRepeat}
+                        />
+                        <b className="text-uppercase ml-2">
+                          Đổi trả trong vòng 7 ngày
+                        </b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* Sản phẩm bán chạy */}
             <section className="py-5" id="section_product">
               <header className={styles.bestseller}>
@@ -492,61 +579,89 @@ function Home(props) {
                 </div>
               )}
             </section>
-            <section className="py-5 bg-light">
-              <div className="container">
-                <div className="row text-center">
-                  <div className="col-lg-4 mb-3 mb-lg-0">
-                    <div className="d-inline-block">
-                      <div className="media align-items-end">
-                        <svg className="svg-icon svg-icon-big svg-icon-light">
-                          <use xlinkHref="#delivery-time-1"></use>
-                        </svg>
-                        <div className="media-body text-left ml-3">
-                          <h6 className="text-uppercase mb-1">Free shipping</h6>
-                          <p className="text-small mb-0 text-muted">
-                            Free shipping worlwide
-                          </p>
+
+            <section className="d-flex align-items-center justify-content-center">
+              <button className={styles.btn_all}>
+                xem tất cả
+                <FontAwesomeIcon
+                  className={styles.iconRight}
+                  icon={faChevronRight}
+                />{" "}
+              </button>
+            </section>
+            {/*  banner deal sock*/}
+            <section className="row mt-4">
+              <div className="col-md-4">
+                <img className="w-100" src={banner_coll_1_1} alt="banner_hot" />
+              </div>
+              <div className="col-md-4">
+                <img className="w-100" src={banner_coll_1_2} alt="banner_hot" />
+              </div>
+              <div className="col-md-4">
+                <img className="w-100" src={banner_coll_1_3} alt="banner_hot" />
+              </div>
+            </section>
+
+            {/* NEWS*/}
+            {loading ? (
+              <div className="spinner-border text-info" role="status">
+                <span className="visually-hidden">
+                  <h4>Loading please wait...</h4>
+                </span>
+              </div>
+            ) : (
+              <section>
+                <div className="row mt-4">
+                  {/* col-1 */}
+                  <div className="col-md-6">
+                    <h5 className="text-uppercase bg-success text-white mb-4 py-2 rounded ">
+                      <FontAwesomeIcon
+                        className="mr-2 text-white ml-2"
+                        icon={faNewspaper}
+                      />
+                      tin tức
+                    </h5>
+                    {news?.map((item) => (
+                      <div className="d-flex ">
+                        <img
+                          className={styles.imgNews}
+                          src={item.image}
+                          alt=""
+                        />
+                        <div>
+                          <h5 className="mb-2">{item.title}</h5>
+                          <a
+                            href="/home"
+                            alt=""
+                            className={styles.news_description}
+                          >
+                            {item.description}
+                          </a>
                         </div>
                       </div>
-                    </div>
+                    ))}
                   </div>
-                  <div className="col-lg-4 mb-3 mb-lg-0">
-                    <div className="d-inline-block">
-                      <div className="media align-items-end">
-                        <svg className="svg-icon svg-icon-big svg-icon-light">
-                          <use xlinkHref="#helpline-24h-1"> </use>
-                        </svg>
-                        <div className="media-body text-left ml-3">
-                          <h6 className="text-uppercase mb-1">
-                            24 x 7 service
-                          </h6>
-                          <p className="text-small mb-0 text-muted">
-                            Free shipping worlwide
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4">
-                    <div className="d-inline-block">
-                      <div className="media align-items-end">
-                        <svg className="svg-icon svg-icon-big svg-icon-light">
-                          <use xlinkHref="#label-tag-1"> </use>
-                        </svg>
-                        <div className="media-body text-left ml-3">
-                          <h6 className="text-uppercase mb-1">
-                            Festival offer
-                          </h6>
-                          <p className="text-small mb-0 text-muted">
-                            Free shipping worlwide
-                          </p>
-                        </div>
+                  <div className="col-md-6">
+                    <h5 className="text-uppercase bg-success text-white mb-4 py-2 rounded">
+                      <FontAwesomeIcon
+                        className="mr-2 text-white ml-2"
+                        icon={faReceipt}
+                      />
+                      công thức làm bánh
+                    </h5>
+                    <div className="d-flex ">
+                      <img src="" alt="" />
+                      <div>
+                        <p>title</p>
+                        <a href="/home" alt="">
+                          description
+                        </a>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            )}
 
             {/* FeedBack */}
             <section>
@@ -555,7 +670,7 @@ function Home(props) {
 
             <section className="py-5">
               <div className="container p-0">
-                <div className="row">
+                <div className="row d-flex align-items-center">
                   <div className="col-lg-6 mb-3 mb-lg-0">
                     <h5 className="text-capitalize">
                       Đăng ký email của bạn để nhận nhiều ưu đãi!
