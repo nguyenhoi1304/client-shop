@@ -13,7 +13,25 @@ function Header(props) {
   const dispatch = useDispatch();
   const [valueActive, setValueActive] = useState("home");
   const [valueSearch, setValueSearch] = useState("");
+  const [offset, setOffset] = useState(0);
+
   const navigation = useNavigate();
+
+  // sử lý cuộn phần header
+  useEffect(() => {
+    const onScroll = () => setOffset(window.pageYOffset);
+    // clean up code
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleUp = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   const listMenuItemLeft = {
     home: "Trang chủ",
@@ -61,6 +79,9 @@ function Header(props) {
   }, [idUser]);
 
   const handleActive = (value) => {
+    if (value === "home") {
+      handleUp();
+    }
     setValueActive(value);
   };
 
@@ -71,9 +92,9 @@ function Header(props) {
   };
 
   return (
-    <div className={styles.header}>
-      <div className="fluid px-0 px-lg-3">
-        <nav className="navbar navbar-expand-lg navbar-light  ">
+    <div className={offset > 400 ? styles.header_change : styles.header}>
+      <div className="fluid px-0 px-lg-3 ">
+        <nav className="navbar navbar-expand-lg navbar-light px-0 mt-3">
           {/* button icon menu */}
           <button
             className="navbar-toggler"
@@ -90,7 +111,12 @@ function Header(props) {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul className="navbar-nav mr-auto align-items-center">
               <li className="nav-item">
-                <img className={styles.img_logo} src={logo} alt="logo" />
+                <img
+                  className={styles.img_logo}
+                  src={logo}
+                  alt="logo"
+                  onClick={() => handleUp()}
+                />
               </li>
               {/* list item left */}
               <li className="nav-item" onClick={() => handleActive("home")}>
