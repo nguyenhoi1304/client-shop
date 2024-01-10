@@ -136,61 +136,70 @@ function SignIn(props) {
   }
 
   return (
-    <div className="limiter">
-      <div className="container-login100">
-        <div className="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-          <span className="login100-form-title p-b-33 text-white">
-            Đăng nhập
-          </span>
-
-          <div className="d-flex justify-content-center pb-5">
-            {emailRegex && (
-              <span className="text-danger">* Incorrect Email Format</span>
-            )}
-            {errorEmail && (
-              <span className="text-danger">* Please Check Your Email</span>
-            )}
-            {errorPassword && (
-              <span className="text-danger">* Please Check Your Password</span>
-            )}
-          </div>
-
-          <div className="inputbox">
-            <input
-              type="email"
-              className="input100"
-              value={email}
-              onChange={onChangeEmail}
-            />
-            <label for="" className="text-white ">
-              Email <FontAwesomeIcon icon={faEnvelope} />
-            </label>
-          </div>
-          <div className=" inputbox rs1 validate-input">
-            <input
-              className="input100"
-              type="password"
-              value={password}
-              onChange={onChangePassword}
-            />
-            <label for="" className="text-light">
-              Mật khẩu <FontAwesomeIcon icon={faLock} />
-            </label>
-          </div>
-
-          <div className="container-login100-form-btn m-t-20 ">
-            {redirect && <redirect to={`/`} />}
-            <button className="login100-form-btn text-info" onClick={onSubmit}>
+    <div className="signup">
+      <div className="limiter">
+        <div className="container-login100">
+          <div className="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+            <span className="login100-form-title p-b-33 text-white">
               Đăng nhập
-            </button>
-          </div>
+            </span>
 
-          <div className="text-center p-t-45 p-b-4">
-            <span className="text-light font-weight-bold">Tạo tài khoản?</span>
-            &nbsp;
-            <Link to="/signup" className="txt2 hov1">
-              Đăng ký
-            </Link>
+            <div className="d-flex justify-content-center pb-5">
+              {emailRegex && (
+                <span className="text-danger">* Incorrect Email Format</span>
+              )}
+              {errorEmail && (
+                <span className="text-danger">* Please Check Your Email</span>
+              )}
+              {errorPassword && (
+                <span className="text-danger">
+                  * Please Check Your Password
+                </span>
+              )}
+            </div>
+
+            <div className="inputbox">
+              <input
+                type="email"
+                className="input100"
+                value={email}
+                onChange={onChangeEmail}
+              />
+              <label for="" className="text-white ">
+                Email <FontAwesomeIcon icon={faEnvelope} />
+              </label>
+            </div>
+            <div className=" inputbox rs1 validate-input">
+              <input
+                className="input100"
+                type="password"
+                value={password}
+                onChange={onChangePassword}
+              />
+              <label for="" className="text-light">
+                Mật khẩu <FontAwesomeIcon icon={faLock} />
+              </label>
+            </div>
+
+            <div className="container-login100-form-btn m-t-20 ">
+              {redirect && <redirect to={`/`} />}
+              <button
+                className="login100-form-btn text-info"
+                onClick={onSubmit}
+              >
+                Đăng nhập
+              </button>
+            </div>
+
+            <div className="text-center p-t-45 p-b-4">
+              <span className="text-light font-weight-bold">
+                Tạo tài khoản?
+              </span>
+              &nbsp;
+              <Link to="/signup" className="txt2 hov1">
+                Đăng ký
+              </Link>
+            </div>
           </div>
         </div>
       </div>

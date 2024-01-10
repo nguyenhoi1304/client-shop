@@ -170,119 +170,123 @@ function SignUp(props) {
   }
 
   return (
-    <div className="limiter">
-      <div className="container-login100">
-        <div className="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
-          <span className="login100-form-title p-b-33 text-light">Đăng ký</span>
-          <div className="d-flex justify-content-center pb-5">
-            {errorFullname && (
-              <span className="text-danger">
-                * Tên đầy đủ không được để trống!
-              </span>
-            )}
-            {errorEmail && (
-              <span className="text-danger">
-                * Vui lòng kiểm tra Email, Email không được để trống!
-              </span>
-            )}
-            {emailRegex && (
-              <span className="text-danger">
-                * Email của bạn không đúng định dạng
-              </span>
-            )}
-            {errorPassword && (
-              <span className="text-danger">
-                *Vui lòng kiểm tra lại password!
-              </span>
-            )}
-            {errorConfirmPassword && (
-              <span className="text-danger">
-                * Mật khẩu xác nhận không trùng khớp với mật khẩu!
-              </span>
-            )}
-            {errorPhone && (
-              <span className="text-danger">
-                * Vui lòng kiểm tra lại số điện thoại!
-              </span>
-            )}
-          </div>
-          <div className=" validate-input inputbox">
-            <input
-              className="input100"
-              value={fullname}
-              onChange={onChangeName}
-              type="text"
-            />
-            <label for="" className="text-white ">
-              Tên đầy đủ
-            </label>
-          </div>
-
-          <div className="inputbox rs1 validate-input">
-            <input
-              className="input100"
-              value={email}
-              onChange={onChangeEmail}
-              type="email"
-            />
-            <label for="" className="text-white ">
-              Email <FontAwesomeIcon icon={faEnvelope} />
-            </label>
-          </div>
-
-          <div className="inputbox rs1 validate-input">
-            <input
-              className="input100"
-              value={password}
-              onChange={onChangePassword}
-              type="password"
-              required
-            />
-            <label for="" className="text-white ">
-              Mật khẩu <FontAwesomeIcon icon={faLock} />
-            </label>
-          </div>
-
-          <div className="inputbox rs1 validate-input">
-            <input
-              className="input100"
-              value={confirmPassword}
-              onChange={onChangeConfirmPassword}
-              type="password"
-              required
-            />
-            <label for="" className="text-white ">
-              Nhập lại mật khẩu <FontAwesomeIcon icon={faLock} />
-            </label>
-          </div>
-
-          <div className="inputbox rs1 validate-input">
-            <input
-              className="input100"
-              value={phone}
-              onChange={onChangePhone}
-              type="number"
-            />
-            <label for="" className="text-white ">
-              Số điện thoại <FontAwesomeIcon icon={faPhone} />
-            </label>
-          </div>
-
-          <div className="container-login100-form-btn m-t-20">
-            <button
-              className="login100-form-btn text-info"
-              onClick={handlerSignUp}
-            >
+    <div className="signin">
+      <div className="limiter">
+        <div className="container-login100">
+          <div className="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+            <span className="login100-form-title p-b-33 text-light">
               Đăng ký
-            </button>
-          </div>
+            </span>
+            <div className="d-flex justify-content-center pb-5">
+              {errorFullname && (
+                <span className="text-danger">
+                  * Tên đầy đủ không được để trống!
+                </span>
+              )}
+              {errorEmail && (
+                <span className="text-danger">
+                  * Vui lòng kiểm tra Email, Email không được để trống!
+                </span>
+              )}
+              {emailRegex && (
+                <span className="text-danger">
+                  * Email của bạn không đúng định dạng
+                </span>
+              )}
+              {errorPassword && (
+                <span className="text-danger">
+                  *Vui lòng kiểm tra lại password!
+                </span>
+              )}
+              {errorConfirmPassword && (
+                <span className="text-danger">
+                  * Mật khẩu xác nhận không trùng khớp với mật khẩu!
+                </span>
+              )}
+              {errorPhone && (
+                <span className="text-danger">
+                  * Vui lòng kiểm tra lại số điện thoại!
+                </span>
+              )}
+            </div>
+            <div className=" validate-input inputbox">
+              <input
+                className="input100"
+                value={fullname}
+                onChange={onChangeName}
+                type="text"
+              />
+              <label for="" className="text-white ">
+                Tên đầy đủ
+              </label>
+            </div>
 
-          <div className="text-center p-t-45 p-b-4">
-            <span className="text-light font-weight-bold ">Đăng nhập?</span>
-            &nbsp;
-            <Link to="/signin" className="txt2 hov1">
-              Click
-            </Link>
+            <div className="inputbox rs1 validate-input">
+              <input
+                className="input100"
+                value={email}
+                onChange={onChangeEmail}
+                type="email"
+              />
+              <label for="" className="text-white ">
+                Email <FontAwesomeIcon icon={faEnvelope} />
+              </label>
+            </div>
+
+            <div className="inputbox rs1 validate-input">
+              <input
+                className="input100"
+                value={password}
+                onChange={onChangePassword}
+                type="password"
+                required
+              />
+              <label for="" className="text-white ">
+                Mật khẩu <FontAwesomeIcon icon={faLock} />
+              </label>
+            </div>
+
+            <div className="inputbox rs1 validate-input">
+              <input
+                className="input100"
+                value={confirmPassword}
+                onChange={onChangeConfirmPassword}
+                type="password"
+                required
+              />
+              <label for="" className="text-white ">
+                Nhập lại mật khẩu <FontAwesomeIcon icon={faLock} />
+              </label>
+            </div>
+
+            <div className="inputbox rs1 validate-input">
+              <input
+                className="input100"
+                value={phone}
+                onChange={onChangePhone}
+                type="number"
+              />
+              <label for="" className="text-white ">
+                Số điện thoại <FontAwesomeIcon icon={faPhone} />
+              </label>
+            </div>
+
+            <div className="container-login100-form-btn m-t-20">
+              <button
+                className="login100-form-btn text-info"
+                onClick={handlerSignUp}
+              >
+                Đăng ký
+              </button>
+            </div>
+
+            <div className="text-center p-t-45 p-b-4">
+              <span className="text-light font-weight-bold ">Đăng nhập?</span>
+              &nbsp;
+              <Link to="/signin" className="txt2 hov1">
+                Click
+              </Link>
+            </div>
           </div>
         </div>
       </div>
