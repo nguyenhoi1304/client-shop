@@ -1,0 +1,32 @@
+/* clock */
+
+.clock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px 3%;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.clock_text {
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+
+.clock_text:nth-child(2) {
+  padding: 10px 15px;
+  background-color: rgb(218, 203, 72);
+  border-radius: 10px;
+}
+.clock_text:nth-child(3) {
+  padding: 10px 15px;
+  background-color: rgb(218, 203, 72);
+  border-radius: 10px;
+}
+.clock_text:nth-child(4) {
+  padding: 10px 15px;
+  background-color: rgb(218, 203, 72);
+  border-radius: 10px;
+}
+/*  */

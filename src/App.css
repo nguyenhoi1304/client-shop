@@ -4,7 +4,7 @@ body {
 
 .App {
   margin-bottom: -50px;
-  margin-top: calc(var(--height-header) + 20px);
+  /* margin-top: calc(var(--height-header) + 20px); */
 }
 
 :root {

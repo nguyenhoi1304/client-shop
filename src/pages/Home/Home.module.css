@@ -1,0 +1,209 @@
+.home {
+  margin-top: calc(var(--height-header) + 20px);
+}
+.img_banner {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.btn_move {
+  padding: 12px 15px;
+  border-radius: 50%;
+  border: 3px solid #87c762;
+}
+
+.cart_body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon_hotbanner {
+  color: var(--background-main-color);
+  width: 40px;
+  height: 40px;
+}
+
+.btn_coppy {
+  background-color: #87c762;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 5px;
+  color: white;
+}
+.btn_all {
+  text-transform: uppercase;
+  color: var(--background-main-color);
+  font-weight: bold;
+  padding: 10px 28px;
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid var(--background-main-color);
+}
+
+.btn_all:hover,
+.iconRight:hover {
+  color: white;
+  background-color: var(--background-main-color);
+}
+.btn_all .iconRight {
+  font-size: 12px;
+  margin-left: 7px;
+}
+
+.btn_coppy:hover {
+  background-color: #56c019;
+}
+.btn_condition {
+  color: blue;
+}
+
+.cards_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.text_title {
+  position: relative;
+  color: rgba(255, 255, 255, 0.795);
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  margin-top: 10px;
+}
+
+.card_love {
+  height: 400px;
+  padding: 20px;
+  width: 100%;
+  background-color: #ec71c3;
+  border-radius: 10px;
+  z-index: 1;
+}
+.card {
+  background-color: white;
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  text-align: center;
+  margin-right: 14%;
+  border-radius: 10px;
+}
+.card_sale {
+  border-radius: 15px;
+  border-left: 1px dotted #ccc;
+  background-color: #cccccc71;
+}
+
+.card_sell {
+  background-color: white;
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.description {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.img_love {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  margin: 0 15px;
+}
+.card:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.product_img {
+  height: 200px;
+  width: 200px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 7px 12px 9px #ccc;
+}
+
+.love,
+.bestseller {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+.love {
+  background-color: #ec71c3;
+  padding: 5px 10px;
+}
+
+.bestseller {
+  background-color: #50b9b9;
+  padding: 25px 10px;
+}
+.title {
+  position: relative;
+  display: flex;
+}
+
+.title .text_title .jump1 {
+  position: absolute;
+  font-weight: 800;
+  right: -8%;
+  color: red;
+  animation: jump 1.6s infinite;
+}
+
+.title .text_title .jump2 {
+  position: absolute;
+  font-weight: 800;
+  right: -15%;
+  color: red;
+  animation: jump 1.3s infinite;
+}
+.title .text_title .jump3 {
+  position: absolute;
+  font-weight: 800;
+  right: -20%;
+  color: red;
+  animation: jump 1s infinite;
+}
+
+@keyframes jump {
+  from {
+    top: -10px;
+  }
+  to {
+    top: -15px;
+  }
+}
+
+.imgNews {
+  width: 100%;
+  height: 200px;
+  margin-right: 20px;
+}
+
+.news_description {
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.title_about_cake {
+  background-color: var(--background-main-color);
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px 5px;
+}

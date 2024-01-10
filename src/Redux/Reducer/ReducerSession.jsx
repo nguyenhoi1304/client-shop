@@ -1,26 +1,22 @@
 const initialState = {
-	idUser: '',
+  idUser: "",
 };
 
 const ReducerSession = (state = initialState, action) => {
-	switch (action.type) {
-		case 'ADD_SESSION':
-			console.log('idUser: ', action.data);
+  switch (action.type) {
+    case "ADD_SESSION":
+      const stateLogin = [...state.idUser];
+      stateLogin.idUser = action.data;
+      return stateLogin;
 
-			const stateLogin = [...state.idUser];
-			stateLogin.idUser = action.data;
-			return stateLogin;
+    case "DELETE_SESSION":
+      const stateLogout = [...state.idUser];
+      stateLogout.idUser = action.data;
+      return stateLogout;
 
-		case 'DELETE_SESSION':
-			console.log('idUser: ', action.data);
-
-			const stateLogout = [...state.idUser];
-			stateLogout.idUser = action.data;
-			return stateLogout;
-
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 };
 
 export default ReducerSession;
