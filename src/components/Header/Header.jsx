@@ -136,7 +136,7 @@ function Header({ size }) {
                 className="nav-item"
                 onClick={() => handleActive("introduce")}
               >
-                <Link className="nav-link " to={`/`}>
+                <Link className="nav-link " to={`/about`}>
                   <span
                     className={
                       valueActive === "introduce"

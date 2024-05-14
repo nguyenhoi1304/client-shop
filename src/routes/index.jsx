@@ -7,6 +7,7 @@ import Shop from "../pages/Shop/Shop";
 import Home from "../pages/Home/Home";
 import MainHistory from "../pages/History/component/MainHistory";
 import DetailHistory from "../pages/History/component/DetailHistory";
+import About from "../pages/About/About";
 
 const publicRoutes = [
   { path: "/", component: Home },
@@ -19,6 +20,7 @@ const publicRoutes = [
   { path: "/shop/:valueSearchHome", component: Shop },
   { path: "/history", component: MainHistory },
   { path: "/history/:idHistory", component: DetailHistory },
+  { path: "/about", component: About },
 ];
 
 export default publicRoutes;

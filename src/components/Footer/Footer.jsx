@@ -81,27 +81,27 @@ function Footer(props) {
           <div className="col-md-4 text-center">
             <h6 className="text-uppercase mb-3">THEO DÕI CHÚNG TÔI TRÊN</h6>
             <ul className="list-unstyled mb-0 ">
-              <li>
-                <a className="footer-link" href="#">
-                  <FontAwesomeIcon className="mr-2" icon={faTwitter} />
+              <li >
+                <a className="footer-link" href="https://twitter.com/">
+                  <FontAwesomeIcon  icon={faTwitter} />
                   Twitter
                 </a>
               </li>
-              <li>
-                <a className="footer-link" href="#">
-                  <FontAwesomeIcon className="mr-2" icon={faInstagram} />
+              <li >
+                <a className="footer-link" href="https://www.instagram.com/">
+                  <FontAwesomeIcon  icon={faInstagram} />
                   Instagram
                 </a>
               </li>
-              <li>
-                <a className="footer-link" href="#">
-                  <FontAwesomeIcon className="mr-2" icon={faFacebook} />
+              <li >
+                <a className="footer-link" href="https://www.facebook.com/">
+                  <FontAwesomeIcon  icon={faFacebook} />
                   Facebook
                 </a>
               </li>
-              <li>
-                <a className="footer-link" href="#">
-                  <FontAwesomeIcon className="mr-2" icon={faPinterest} />
+              <li >
+                <a className="footer-link" href="https://www.pinterest.com/">
+                  <FontAwesomeIcon  icon={faPinterest} />
                   Pinterest
                 </a>
               </li>
