@@ -165,7 +165,7 @@ function Header({ size }) {
                 </Link>
               </li>
               <li className="nav-item" onClick={() => handleActive("news")}>
-                <Link className="nav-link " to={`/`}>
+                <Link className="nav-link " to={`/blog`}>
                   <span
                     className={
                       valueActive === "news"
@@ -178,7 +178,7 @@ function Header({ size }) {
                 </Link>
               </li>
               <li className="nav-item" onClick={() => handleActive("contact")}>
-                <Link className="nav-link " to={`/`}>
+                <Link className="nav-link " to={`/contact`}>
                   <span
                     className={
                       valueActive === "contact"

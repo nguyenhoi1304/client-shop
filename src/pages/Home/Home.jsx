@@ -653,7 +653,7 @@ function Home(props) {
                           <div className="col-md-6 w-100">
                             <h5 className="mb-2">{item.title}</h5>
                             <a
-                              href="/home"
+                              href="/"
                               alt=""
                               className={styles.news_description}
                             >
@@ -667,6 +667,11 @@ function Home(props) {
                 </div>
               </section>
             )}
+            <div className="d-flex mt-4 justify-content-center">
+              <a href="/blog" alt="">
+                Xem thêm...
+              </a>
+            </div>
 
             {/* FeedBack */}
             <section>
