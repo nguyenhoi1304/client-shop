@@ -170,7 +170,7 @@ function SignUp(props) {
   }
 
   return (
-    <div className="signin">
+    <div className="signup">
       <div className="limiter">
         <div className="container-login100">
           <div className="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">

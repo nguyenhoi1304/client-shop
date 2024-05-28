@@ -93,7 +93,7 @@ function Header({ size }) {
   return (
     <div className={offset > 400 ? styles.header_change : styles.header}>
       <div className="fluid px-0 px-lg-3 ">
-        <nav className="navbar navbar-expand-lg navbar-light px-0 mt-3">
+        <nav className="navbar navbar-expand-lg navbar-light px-0 mt-2">
           {/* button icon menu */}
           <button
             className="navbar-toggler"
