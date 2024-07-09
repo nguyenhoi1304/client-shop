@@ -82,6 +82,7 @@ function Header({ size }) {
       handleUp();
     }
     setValueActive(value);
+    window.scrollTo(0, 0);
   };
 
   const handleSearch = (e) => {
@@ -164,7 +165,7 @@ function Header({ size }) {
                   </span>
                 </Link>
               </li>
-              <li className="nav-item" onClick={() => handleActive("news")}>
+              {/* <li className="nav-item" onClick={() => handleActive("news")}>
                 <Link className="nav-link " to={`/blog`}>
                   <span
                     className={
@@ -176,7 +177,7 @@ function Header({ size }) {
                     {listMenuItemLeft.news}
                   </span>
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item" onClick={() => handleActive("contact")}>
                 <Link className="nav-link " to={`/contact`}>
                   <span
@@ -193,7 +194,13 @@ function Header({ size }) {
 
               <li
                 className="nav-item"
-                onClick={() => handleActive("promotion")}
+                onClick={() => {
+                  handleActive("promotion");
+                  window.scrollTo({
+                    top: 800,
+                    behavior: "smooth",
+                  });
+                }}
               >
                 <Link className="nav-link " to={`/`}>
                   <span

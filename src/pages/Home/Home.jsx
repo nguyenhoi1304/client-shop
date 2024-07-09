@@ -440,7 +440,19 @@ function Home(props) {
                                     {product.name}
                                   </p>
                                   <p className={styles.description}>
-                                    {convertMoney(product.price)} VND
+                                    Sale 25%
+                                    <p className={styles.descriptionSale}>
+                                      {convertMoney(
+                                        product.price +
+                                          (product.price * 25) / 100
+                                      )}{" "}
+                                      VND
+                                    </p>
+                                  </p>
+                                  Chỉ còn
+                                  <p className={styles.description}>
+                                    {convertMoney(product.price)}
+                                    VND
                                   </p>
                                 </a>
                               </div>

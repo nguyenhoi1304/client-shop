@@ -26,8 +26,6 @@ function IndexPage(props) {
     handlerChangePage(value);
   };
 
-  console.log(indexPage);
-
   return (
     <div className="d-flex">
       {indexPage &&
@@ -39,7 +37,9 @@ function IndexPage(props) {
             key={value}
             onClick={() => onIndexPage(value)}
           >
-            <a className="page-link">{value}</a>
+            <p className="page-link" onClick={window.scrollTo(0, 200)}>
+              {value}
+            </p>
           </li>
         ))}
     </div>

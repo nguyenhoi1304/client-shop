@@ -70,13 +70,13 @@ function Shop(props) {
   //Hàm này dùng để thay đổi state pagination.category
   const handlerCategory = (value) => {
     console.log("Value: ", value);
-
     setPagination({
       page: pagination.page,
       count: pagination.count,
       search: pagination.search,
       category: value,
     });
+    window.scrollTo(0, 200);
   };
 
   //Gọi hàm useEffect tìm tổng số sản phẩm để tính tổng số trang
@@ -249,7 +249,7 @@ function Shop(props) {
               </div>
             </div>
           ))}
-        {/* -------------Modal Product----------------- */}
+        {/* -------------Modal Product Category----------------- */}
 
         <section className="py-5">
           <div className="container p-0">

@@ -109,10 +109,14 @@
   margin-top: 30px;
 }
 
-.description {
+.description,
+.descriptionSale {
   font-size: 1.1rem;
   text-align: center;
-  padding: 5px 0;
+}
+.descriptionSale {
+  text-decoration-line: line-through;
+  text-decoration-color: red;
 }
 
 .img_love {
